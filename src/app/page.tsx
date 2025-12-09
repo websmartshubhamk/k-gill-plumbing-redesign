@@ -1,6 +1,9 @@
 import { Phone, MessageSquare, Wrench, Flame, Bath, Clock, Shield, Award } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import QuoteCalculator from '@/components/ui/QuoteCalculator'
+import Testimonials from '@/components/sections/Testimonials'
+import Certifications from '@/components/sections/Certifications'
 
 const services = [
   {
@@ -159,6 +162,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Quote Calculator Section */}
+      <section className="section-padding">
+        <div className="section-container">
+          <div className="max-w-4xl mx-auto">
+            <QuoteCalculator />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* Certifications Section */}
+      <Certifications />
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-brand-orange to-orange-700">

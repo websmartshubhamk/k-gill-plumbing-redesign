@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send } from 'lucide-react'
 
 const serviceOptions = [
@@ -14,6 +15,7 @@ const serviceOptions = [
 ]
 
 export default function ContactPage() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,6 +25,14 @@ export default function ContactPage() {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  useEffect(() => {
+    // Pre-fill message from quote calculator if present
+    const message = searchParams.get('message')
+    if (message) {
+      setFormData(prev => ({ ...prev, message: decodeURIComponent(message) }))
+    }
+  }, [searchParams])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

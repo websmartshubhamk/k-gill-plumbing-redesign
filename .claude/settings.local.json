@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.kgillplumbingandheating.co.uk)",
+      "Bash(git init:*)",
+      "Bash(npm ls:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}

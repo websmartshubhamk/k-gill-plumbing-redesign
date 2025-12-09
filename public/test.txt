@@ -1,0 +1,3 @@
+Vercel deployment test file
+Created: 2025-12-09
+If you can see this, static files are being served correctly.

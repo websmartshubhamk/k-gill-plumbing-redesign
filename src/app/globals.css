@@ -11,10 +11,6 @@
     --emergency: 220 38 38;
   }
 
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-white text-gray-900 antialiased;
   }

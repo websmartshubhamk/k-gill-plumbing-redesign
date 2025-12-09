@@ -1,4 +1,4 @@
-import { Phone, Bath, Shower, Droplets, Palette, Ruler, CheckCircle, Star, Shield } from 'lucide-react'
+import { Phone, Bath, ShowerHead, Droplets, Palette, Ruler, CheckCircle, Star, Shield } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -12,7 +12,7 @@ const services = [
   {
     title: 'Shower Installation',
     description: 'Walk-in showers, power showers, and shower enclosures.',
-    icon: Shower,
+    icon: ShowerHead,
   },
   {
     title: 'Bathroom Suite Fitting',

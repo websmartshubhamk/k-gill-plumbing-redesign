@@ -36,9 +36,15 @@ export default function Footer() {
             <p className="text-sm mb-4">
               Professional plumbing, heating and bathroom services across Hitchin, Stevenage, and Letchworth.
             </p>
-            <p className="text-sm font-semibold text-brand-blue-light">
-              Gas Safe Registered
-            </p>
+            <div className="mt-4">
+              <Image
+                src="/images/1logos.png"
+                alt="Gas Safe Registered"
+                width={120}
+                height={80}
+                className="h-auto max-w-[120px]"
+              />
+            </div>
           </div>
 
           {/* Quick Links */}

@@ -59,7 +59,8 @@ export default function HeatingPage() {
             src="/images/plumbingTap.jpg"
             alt="Hot Water and Heating Services"
             fill
-            className="object-cover opacity-10"
+            className="object-cover object-center opacity-15"
+            style={{ objectPosition: '50% 30%' }}
             priority
           />
         </div>

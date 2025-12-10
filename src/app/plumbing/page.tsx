@@ -155,7 +155,7 @@ export default function PlumbingPage() {
             </div>
             <div className="relative">
               <Image
-                src="/images/plumbingpicNew.jpg"
+                src="/images/Home3.jpg"
                 alt="Professional Plumbing Services"
                 width={500}
                 height={400}

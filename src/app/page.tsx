@@ -148,7 +148,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="text-center">
                 <div className="mb-4 p-4 bg-white/10 rounded-lg w-fit mx-auto">
@@ -158,6 +158,22 @@ export default function Home() {
                 <p className="text-blue-100">{benefit.description}</p>
               </div>
             ))}
+          </div>
+
+          {/* Team Photo */}
+          <div className="mt-16 max-w-5xl mx-auto">
+            <div className="bg-white/10 p-2 rounded-lg">
+              <Image
+                src="/images/team-van.jpg"
+                alt="K Gill Plumbing & Heating Professional Team"
+                width={1200}
+                height={800}
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+            <p className="text-center mt-6 text-lg text-blue-100">
+              Our professional team is ready to serve you with quality workmanship and reliable service
+            </p>
           </div>
         </div>
       </section>

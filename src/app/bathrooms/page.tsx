@@ -68,7 +68,7 @@ export default function BathroomsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center">
+      <section className="relative min-h-[80vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/plumbingTap.jpg"

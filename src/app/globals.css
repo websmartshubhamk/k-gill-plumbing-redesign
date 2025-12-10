@@ -34,7 +34,7 @@
 
   .btn-emergency {
     @apply bg-emergency text-white hover:bg-red-700 focus:ring-4 focus:ring-emergency/20 
-           animate-pulse hover:animate-none transition-all duration-200;
+           transition-all duration-200;
   }
 
   .btn-whatsapp {

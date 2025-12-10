@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const testimonials = [
@@ -70,13 +70,13 @@ export default function Testimonials() {
   const testimonialsPerView = 2
   const maxIndex = Math.max(0, testimonials.length - testimonialsPerView)
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
-  }
+  }, [maxIndex])
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
-  }
+  }, [maxIndex])
 
   // Auto-play functionality
   useEffect(() => {
@@ -84,7 +84,7 @@ export default function Testimonials() {
     
     const interval = setInterval(nextSlide, 5000)
     return () => clearInterval(interval)
-  }, [isAutoPlaying, maxIndex])
+  }, [isAutoPlaying, nextSlide])
 
   const handleMouseEnter = () => setIsAutoPlaying(false)
   const handleMouseLeave = () => setIsAutoPlaying(true)

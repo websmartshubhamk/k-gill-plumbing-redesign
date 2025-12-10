@@ -87,7 +87,15 @@ export default function Certifications() {
               </div>
               <div className="text-center">
                 <div className="bg-white p-8 rounded-lg shadow-md">
-                  <Shield className="h-24 w-24 text-blue-600 mx-auto mb-4" />
+                  <div className="mb-4">
+                    <Image
+                      src="/images/1logos.png"
+                      alt="Gas Safe Register"
+                      width={150}
+                      height={100}
+                      className="mx-auto"
+                    />
+                  </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
                     Gas Safe Register
                   </h4>

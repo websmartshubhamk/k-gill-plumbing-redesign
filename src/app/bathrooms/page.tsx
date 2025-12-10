@@ -71,8 +71,8 @@ export default function BathroomsPage() {
       <section className="relative bg-gradient-to-br from-blue-50 to-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/plumbingTap.jpg"
-            alt="Bathroom Installation Services"
+            src="/images/team-van.jpg"
+            alt="K Gill Plumbing & Heating Professional Team"
             fill
             className="object-cover opacity-10"
             priority

@@ -1,4 +1,4 @@
-import { Phone, Wrench, Flame, Bath, Clock, Shield, Award } from 'lucide-react'
+import { Phone, Wrench, Flame, Bath, Clock, Shield, Award, CheckCircle2, Users, Gauge } from 'lucide-react'
 
 // WhatsApp Icon
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -15,6 +15,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Testimonials from '@/components/sections/Testimonials'
 import Certifications from '@/components/sections/Certifications'
+import FloatingCTA from '@/components/ui/FloatingCTA'
 
 const services = [
   {
@@ -61,45 +62,76 @@ const benefits = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="hero-pattern bg-gradient-to-br from-gray-50 to-white">
-        <div className="section-container section-padding">
+      {/* Hero Section with Team Photo */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/team-with-van.jpg"
+            alt="K Gill Plumbing Team"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+        </div>
+        
+        {/* Hero Content */}
+        <div className="section-container relative z-10 py-20 sm:py-24 lg:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <div className="max-w-2xl animate-slide-in-left text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-brand-orange/90 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6 text-sm sm:text-base">
+                <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="font-semibold">Trusted by 5000+ Customers</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 Expert Plumbing & Heating Services in{' '}
-                <span className="text-gradient">Hertfordshire</span>
+                <span className="text-brand-orange">Hertfordshire</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8">
                 Professional, reliable, and affordable plumbing solutions. 
                 Available 24/7 for emergencies. Gas Safe registered engineers.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="tel:07990806810"
-                  className="flex items-center justify-center gap-2 px-6 py-4 btn-emergency rounded-lg font-semibold text-lg emergency-pulse"
+                  className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-4 btn-emergency rounded-lg font-semibold text-base sm:text-lg emergency-pulse"
                 >
-                  <Phone className="h-5 w-5" />
-                  Emergency: 07990 806810
+                  <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="hidden xs:inline">Emergency: </span>07990 806810
                 </a>
                 <a
                   href="https://wa.me/447990806810"
-                  className="flex items-center justify-center gap-2 px-6 py-4 btn-whatsapp rounded-lg font-semibold text-lg"
+                  className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-4 btn-whatsapp rounded-lg font-semibold text-base sm:text-lg"
                 >
-                  <WhatsAppIcon className="h-5 w-5" />
+                  <WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                   WhatsApp Us
                 </a>
               </div>
             </div>
-            <div className="relative animate-fade-in">
-              <Image
-                src="/images/plumbingpicNew.jpg"
-                alt="Professional Plumbing Services"
-                width={600}
-                height={400}
-                className="w-full h-auto rounded-lg shadow-xl"
-                priority
-              />
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="bg-brand-blue py-12 sm:py-16">
+        <div className="section-container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">20+</div>
+              <div className="text-blue-100 text-sm sm:text-base">Years Experience</div>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">5000+</div>
+              <div className="text-blue-100 text-sm sm:text-base">Happy Customers</div>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">24/7</div>
+              <div className="text-blue-100 text-sm sm:text-base">Emergency Service</div>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">100%</div>
+              <div className="text-blue-100 text-sm sm:text-base">Satisfaction Rate</div>
             </div>
           </div>
         </div>
@@ -123,24 +155,30 @@ export default function Home() {
               <Link
                 key={service.title}
                 href={service.href}
-                className="card-service group"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="card-service card-hover-lift group stagger-animation"
+                style={{ 
+                  animationDelay: `${index * 150}ms`,
+                  transform: 'translateY(20px)'
+                }}
               >
-                <div className="mb-4 p-3 bg-brand-blue/10 rounded-lg w-fit group-hover:bg-brand-blue/20 transition-colors">
-                  <service.icon className="h-8 w-8 text-brand-blue" />
+                <div className="mb-4 p-3 bg-brand-blue/10 rounded-lg w-fit group-hover:bg-brand-blue group-hover:scale-110 transition-all duration-300">
+                  <service.icon className="h-8 w-8 text-brand-blue group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <p className="text-gray-600 mb-4 group-hover:text-gray-700">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
-                    <li key={feature} className="text-sm text-gray-500 flex items-center gap-2">
-                      <div className="h-1 w-1 bg-brand-blue rounded-full" />
+                    <li key={feature} className="text-sm text-gray-500 flex items-center gap-2 group-hover:text-gray-600 transition-colors">
+                      <CheckCircle2 className="h-4 w-4 text-brand-blue group-hover:text-green-500 transition-colors" />
                       {feature}
                     </li>
                   ))}
                 </ul>
+                <div className="mt-6 text-brand-blue font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Learn more →
+                </div>
               </Link>
             ))}
           </div>
@@ -160,7 +198,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="text-center">
                 <div className="mb-4 p-4 bg-white/10 rounded-lg w-fit mx-auto">
@@ -171,27 +209,67 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* Team Photo */}
-          <div className="mt-16 max-w-5xl mx-auto">
-            <div className="bg-white/10 p-2 rounded-lg">
-              <Image
-                src="/images/team-van.jpg"
-                alt="K Gill Plumbing & Heating Professional Team"
-                width={1200}
-                height={800}
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-            <p className="text-center mt-6 text-lg text-blue-100">
-              Our professional team is ready to serve you with quality workmanship and reliable service
-            </p>
-          </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Service Areas Section */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Areas We Serve
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Providing professional plumbing and heating services across Hertfordshire and surrounding areas.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {[
+                'Hitchin', 'Stevenage', 'Letchworth', 'Baldock', 
+                'Royston', 'Knebworth', 'Codicote', 'Welwyn', 
+                'Hertford', 'Ware', 'St Albans', 'Hatfield'
+              ].map((area, index) => (
+                <div
+                  key={area}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-brand-blue hover:text-white transition-all duration-300 cursor-pointer group"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="font-semibold">{area}</div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full mb-6">
+                <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="font-semibold">Covering 30+ Mile Radius</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Local Experts, Regional Coverage
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Based in Hitchin, we serve customers throughout Hertfordshire and beyond. 
+                Our local knowledge combined with professional expertise ensures quick 
+                response times and reliable service.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="tel:07990806810"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-brand-blue text-white rounded-lg font-semibold hover:bg-brand-blue-dark transition-colors"
+                >
+                  <Phone className="h-5 w-5" />
+                  Check Coverage
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Certifications Section */}
       <Certifications />
@@ -223,6 +301,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Floating Emergency CTA */}
+      <FloatingCTA />
     </>
   )
 }

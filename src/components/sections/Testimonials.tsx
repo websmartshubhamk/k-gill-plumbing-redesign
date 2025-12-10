@@ -176,25 +176,6 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Rating Summary */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4">
-            Rated 5/5 based on 150+ reviews
-          </p>
-          <div className="flex items-center justify-center gap-6">
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-brand-orange text-brand-orange" />
-                ))}
-              </div>
-              <span className="font-semibold text-lg">5.0</span>
-            </div>
-            <div className="text-sm text-gray-500">
-              {testimonials.length} verified reviews
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

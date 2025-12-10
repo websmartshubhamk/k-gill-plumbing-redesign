@@ -23,13 +23,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <Image
-              src="/images/Logo.png"
-              alt="K Gill Plumbing & Heating"
-              width={150}
-              height={50}
-              className="h-12 w-auto mb-4 brightness-0 invert"
-            />
+            <div className="mb-4 bg-white rounded px-3 py-2 inline-block">
+              <Image
+                src="/images/Logo.png"
+                alt="K Gill Plumbing & Heating"
+                width={180}
+                height={60}
+                className="h-12 w-auto"
+                priority
+              />
+            </div>
             <p className="text-sm mb-4">
               Professional plumbing, heating and bathroom services across Hitchin, Stevenage, and Letchworth.
             </p>

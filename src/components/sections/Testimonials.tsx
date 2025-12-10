@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const testimonials = [
   {
@@ -133,25 +133,15 @@ export default function Testimonials() {
                   className="w-full md:w-1/2 flex-shrink-0 px-4"
                 >
                   <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full">
-                    <div className="flex items-start gap-4">
-                      <Quote className="h-8 w-8 text-brand-blue/20 flex-shrink-0 mt-1" />
-                      <div className="flex-1">
-                        <div className="flex items-center gap-1 mb-3">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
-                          ))}
-                        </div>
-                        <p className="text-gray-700 mb-4 italic leading-relaxed">{testimonial.text}</p>
-                        <div className="flex items-center justify-between mt-auto">
-                          <div>
-                            <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                            <p className="text-sm text-gray-600">{testimonial.location}</p>
-                          </div>
-                          <span className="text-xs bg-brand-blue/10 text-brand-blue px-3 py-1 rounded-full">
-                            {testimonial.service}
-                          </span>
-                        </div>
-                      </div>
+                    <div className="flex items-center gap-1 mb-3">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 mb-4 italic leading-relaxed">{testimonial.text}</p>
+                    <div className="mt-auto">
+                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                      <p className="text-sm text-gray-600">{testimonial.location}</p>
                     </div>
                   </div>
                 </div>

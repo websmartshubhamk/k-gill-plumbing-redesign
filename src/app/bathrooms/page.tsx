@@ -68,23 +68,24 @@ export default function BathroomsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white">
+      <section className="relative min-h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/team-van.jpg"
-            alt="K Gill Plumbing & Heating Professional Team"
+            src="/images/plumbingTap.jpg"
+            alt="Professional Bathroom Installation"
             fill
-            className="object-cover opacity-10"
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
         <div className="relative z-10 section-container section-padding">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Professional Bathroom Installation in{' '}
-              <span className="text-gradient">Hertfordshire</span>
+              <span className="text-brand-orange">Hertfordshire</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
               Transform your bathroom with our complete fitting service. From luxury suites 
               to practical wet rooms, we bring your dream bathroom to life.
             </p>
@@ -109,7 +110,7 @@ export default function BathroomsPage() {
                   <Star key={i} className="h-4 w-4 fill-current" />
                 ))}
               </div>
-              <span className="text-gray-600">5-star rated bathroom installations</span>
+              <span className="text-gray-200">5-star rated bathroom installations</span>
             </div>
           </div>
         </div>

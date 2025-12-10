@@ -55,7 +55,8 @@ export default function HeatingPage() {
       {/* Hero Section */}
       <section className="hero-pattern bg-gradient-to-br from-orange-50 to-white">
         <div className="section-container section-padding">
-          <div className="max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="max-w-xl">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Expert Heating & Boiler Services in{' '}
               <span className="text-gradient">Hertfordshire</span>
@@ -84,6 +85,17 @@ export default function HeatingPage() {
               <Shield className="h-5 w-5" />
               <span className="font-semibold">Gas Safe Registered Engineers</span>
             </div>
+          </div>
+          <div className="relative animate-fade-in">
+            <Image
+              src="/images/tap-with-steam.jpg"
+              alt="Hot Water and Heating Services"
+              width={600}
+              height={400}
+              className="w-full h-auto rounded-lg shadow-xl"
+              priority
+            />
+          </div>
           </div>
         </div>
       </section>

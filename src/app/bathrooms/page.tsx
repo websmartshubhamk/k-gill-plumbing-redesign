@@ -68,8 +68,17 @@ export default function BathroomsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-pattern bg-gradient-to-br from-blue-50 to-white">
-        <div className="section-container section-padding">
+      <section className="relative bg-gradient-to-br from-blue-50 to-white">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/plumbingTap.jpg"
+            alt="Bathroom Installation Services"
+            fill
+            className="object-cover opacity-10"
+            priority
+          />
+        </div>
+        <div className="relative z-10 section-container section-padding">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Professional Bathroom Installation in{' '}

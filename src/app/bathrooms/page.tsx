@@ -166,9 +166,13 @@ export default function BathroomsPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-brand-blue/10 rounded-lg p-8">
-                <Bath className="h-48 w-48 mx-auto text-brand-blue" />
-              </div>
+              <Image
+                src="/images/plumbingTap.jpg"
+                alt="Professional Bathroom Installation"
+                width={500}
+                height={400}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>

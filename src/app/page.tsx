@@ -81,11 +81,11 @@ export default function Home() {
             </div>
             <div className="relative animate-fade-in">
               <Image
-                src="/images/PipesIcon.png"
+                src="/images/Home3.jpg"
                 alt="Professional Plumbing Services"
                 width={600}
                 height={400}
-                className="w-full h-auto animate-float"
+                className="w-full h-auto rounded-lg shadow-xl"
                 priority
               />
             </div>

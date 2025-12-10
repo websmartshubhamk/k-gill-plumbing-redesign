@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send } from 'lucide-react'
+import Image from 'next/image'
 
 const serviceOptions = [
   'Emergency Plumbing',
@@ -55,8 +56,17 @@ function ContactForm() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-pattern bg-gradient-to-br from-gray-50 to-white">
-        <div className="section-container section-padding">
+      <section className="relative bg-gradient-to-br from-gray-50 to-white">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/contactImg.jpg"
+            alt="Contact K Gill Plumbing"
+            fill
+            className="object-cover opacity-10"
+            priority
+          />
+        </div>
+        <div className="relative z-10 section-container section-padding">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Get in Touch

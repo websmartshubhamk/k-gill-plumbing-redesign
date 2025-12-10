@@ -141,11 +141,11 @@ export default function HeatingPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <Image
-                src="/images/HeatingIcon.png"
-                alt="Heating Services"
+                src="/images/heating_home.jpg"
+                alt="Heating and Boiler Services"
                 width={500}
                 height={400}
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
             <div className="order-1 md:order-2">

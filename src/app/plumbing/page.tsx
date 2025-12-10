@@ -41,8 +41,17 @@ export default function PlumbingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-pattern bg-gradient-to-br from-blue-50 to-white">
-        <div className="section-container section-padding">
+      <section className="relative bg-gradient-to-br from-blue-50 to-white">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/Plumbing4.jpg"
+            alt="Plumbing Services Background"
+            fill
+            className="object-cover opacity-10"
+            priority
+          />
+        </div>
+        <div className="relative z-10 section-container section-padding">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Professional Plumbing Services in{' '}
@@ -146,11 +155,11 @@ export default function PlumbingPage() {
             </div>
             <div className="relative">
               <Image
-                src="/images/PipesIcon.png"
-                alt="Plumbing Services"
+                src="/images/plumbingpicNew.jpg"
+                alt="Professional Plumbing Services"
                 width={500}
                 height={400}
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
           </div>

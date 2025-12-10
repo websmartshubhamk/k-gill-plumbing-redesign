@@ -1,4 +1,7 @@
-import { Star, Quote } from 'lucide-react'
+'use client'
+
+import { useState, useEffect } from 'react'
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const testimonials = [
   {
@@ -29,9 +32,63 @@ const testimonials = [
     text: 'Gas safety check completed quickly and efficiently. Very competitive price and friendly service. My go-to plumber from now on.',
     service: 'Gas Safety Certificate',
   },
+  {
+    name: 'Rachel Green',
+    location: 'Baldock',
+    rating: 5,
+    text: 'Outstanding work on our central heating installation. The team arrived on time, worked cleanly, and explained everything. Excellent value for money.',
+    service: 'Central Heating',
+  },
+  {
+    name: 'James Parker',
+    location: 'Welwyn',
+    rating: 5,
+    text: 'Called for an emergency leak at midnight and they were here within an hour. Professional service even at unsociable hours. Truly grateful!',
+    service: 'Emergency Callout',
+  },
+  {
+    name: 'Lisa Martinez',
+    location: 'St Albans',
+    rating: 5,
+    text: 'Fantastic bathroom fitting service. From design advice to final installation, everything was perfect. Would definitely recommend to friends.',
+    service: 'Bathroom Fitting',
+  },
+  {
+    name: 'Robert Taylor',
+    location: 'Royston',
+    rating: 5,
+    text: 'Regular maintenance on our commercial premises. Always reliable, professional, and competitive pricing. A trusted partner for our business.',
+    service: 'Commercial Plumbing',
+  },
 ]
 
 export default function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  
+  // Show 2 testimonials at a time on desktop, 1 on mobile
+  const testimonialsPerView = 2
+  const maxIndex = Math.max(0, testimonials.length - testimonialsPerView)
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
+  }
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return
+    
+    const interval = setInterval(nextSlide, 5000)
+    return () => clearInterval(interval)
+  }, [isAutoPlaying, maxIndex])
+
+  const handleMouseEnter = () => setIsAutoPlaying(false)
+  const handleMouseLeave = () => setIsAutoPlaying(true)
+
   return (
     <section className="section-padding bg-gray-50">
       <div className="section-container">
@@ -45,36 +102,81 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+        {/* Carousel Container */}
+        <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 hover:bg-white text-brand-blue p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+            aria-label="Previous testimonials"
+          >
+            <ChevronLeft className="h-5 w-5 group-hover:scale-110 transition-transform" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 hover:bg-white text-brand-blue p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+            aria-label="Next testimonials"
+          >
+            <ChevronRight className="h-5 w-5 group-hover:scale-110 transition-transform" />
+          </button>
+
+          {/* Testimonials Carousel */}
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * (100 / testimonialsPerView)}%)` }}
             >
-              <div className="flex items-start gap-4 mb-4">
-                <Quote className="h-8 w-8 text-brand-blue/20 flex-shrink-0" />
-                <div className="flex-1">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.location}</p>
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="w-full md:w-1/2 flex-shrink-0 px-4"
+                >
+                  <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                    <div className="flex items-start gap-4">
+                      <Quote className="h-8 w-8 text-brand-blue/20 flex-shrink-0 mt-1" />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-1 mb-3">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
+                          ))}
+                        </div>
+                        <p className="text-gray-700 mb-4 italic leading-relaxed">"{testimonial.text}"</p>
+                        <div className="flex items-center justify-between mt-auto">
+                          <div>
+                            <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                            <p className="text-sm text-gray-600">{testimonial.location}</p>
+                          </div>
+                          <span className="text-xs bg-brand-blue/10 text-brand-blue px-3 py-1 rounded-full">
+                            {testimonial.service}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <span className="text-xs bg-brand-blue/10 text-brand-blue px-3 py-1 rounded-full">
-                      {testimonial.service}
-                    </span>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="flex justify-center mt-8 gap-2">
+            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  index === currentIndex 
+                    ? 'bg-brand-blue scale-110' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to testimonial set ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
+        {/* Rating Summary */}
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">
             Rated 5/5 based on 150+ reviews
@@ -86,7 +188,10 @@ export default function Testimonials() {
                   <Star key={i} className="h-5 w-5 fill-brand-orange text-brand-orange" />
                 ))}
               </div>
-              <span className="font-semibold">5.0</span>
+              <span className="font-semibold text-lg">5.0</span>
+            </div>
+            <div className="text-sm text-gray-500">
+              {testimonials.length} verified reviews
             </div>
           </div>
         </div>

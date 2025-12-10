@@ -50,7 +50,6 @@ const benefits = [
     title: 'Gas Safe Registered',
     description: 'Fully qualified and registered to work safely on all gas appliances.',
     icon: Shield,
-    isGasSafe: true,
   },
   {
     title: '20+ Years Experience',
@@ -157,21 +156,9 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="text-center">
-                {benefit.isGasSafe ? (
-                  <div className="mb-4 mx-auto w-fit">
-                    <Image
-                      src="/images/1logos.png"
-                      alt="Gas Safe Registered"
-                      width={120}
-                      height={80}
-                      className="mx-auto"
-                    />
-                  </div>
-                ) : (
-                  <div className="mb-4 p-4 bg-brand-orange rounded-lg w-fit mx-auto">
-                    <benefit.icon className="h-10 w-10 text-white" />
-                  </div>
-                )}
+                <div className="mb-4 p-4 bg-brand-orange rounded-lg w-fit mx-auto">
+                  <benefit.icon className="h-10 w-10 text-white" />
+                </div>
                 <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                 <p className="text-blue-100">{benefit.description}</p>
               </div>

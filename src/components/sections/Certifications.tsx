@@ -100,25 +100,6 @@ export default function Certifications() {
           </div>
         </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <div className="text-3xl font-bold text-brand-blue mb-1">150+</div>
-            <p className="text-sm text-gray-600">5-Star Reviews</p>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-brand-blue mb-1">1000+</div>
-            <p className="text-sm text-gray-600">Happy Customers</p>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-brand-blue mb-1">24/7</div>
-            <p className="text-sm text-gray-600">Emergency Service</p>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-brand-blue mb-1">100%</div>
-            <p className="text-sm text-gray-600">Guaranteed Work</p>
-          </div>
-        </div>
       </div>
     </section>
   )

@@ -80,9 +80,9 @@ export default function Home() {
         <div className="section-container relative z-10 py-20 sm:py-24 lg:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="max-w-2xl animate-slide-in-left text-center md:text-left">
-              <div className="inline-flex items-center gap-2 bg-brand-orange/90 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6 text-sm sm:text-base">
-                <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="font-semibold">Trusted by 5000+ Customers</span>
+              <div className="inline-flex items-center gap-2 bg-brand-orange text-white px-4 py-2 rounded-full mb-6 text-sm font-medium shadow-lg">
+                <CheckCircle2 className="h-4 w-4" />
+                <span>Trusted by 5000+ Customers</span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 Expert Plumbing & Heating Services in{' '}
@@ -92,19 +92,19 @@ export default function Home() {
                 Professional, reliable, and affordable plumbing solutions. 
                 Available 24/7 for emergencies. Gas Safe registered engineers.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="tel:07990806810"
-                  className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-4 btn-emergency rounded-lg font-semibold text-base sm:text-lg emergency-pulse"
+                  className="flex items-center justify-center gap-2 px-6 py-4 btn-emergency rounded-lg font-semibold text-lg emergency-pulse shadow-lg"
                 >
-                  <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-                  <span className="hidden xs:inline">Emergency: </span>07990 806810
+                  <Phone className="h-5 w-5" />
+                  07990 806810
                 </a>
                 <a
                   href="https://wa.me/447990806810"
-                  className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-4 btn-whatsapp rounded-lg font-semibold text-base sm:text-lg"
+                  className="flex items-center justify-center gap-2 px-6 py-4 btn-whatsapp rounded-lg font-semibold text-lg shadow-lg"
                 >
-                  <WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <WhatsAppIcon className="h-5 w-5" />
                   WhatsApp Us
                 </a>
               </div>

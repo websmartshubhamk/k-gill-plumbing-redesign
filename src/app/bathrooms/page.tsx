@@ -165,14 +165,17 @@ export default function BathroomsPage() {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <Image
-                src="/images/plumbingTap.jpg"
-                alt="Professional Bathroom Installation"
-                width={500}
-                height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
+            <div className="relative overflow-hidden rounded-lg shadow-lg bg-gray-100">
+              <div className="relative h-[400px] md:h-[500px]">
+                <Image
+                  src="/images/plumbingTap.jpg"
+                  alt="Professional Bathroom Installation"
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: 'center 40%' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </div>

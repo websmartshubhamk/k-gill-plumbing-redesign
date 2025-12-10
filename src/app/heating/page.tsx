@@ -88,7 +88,7 @@ export default function HeatingPage() {
           </div>
           <div className="relative animate-fade-in">
             <Image
-              src="/images/tap-with-steam.jpg"
+              src="/images/plumbingTap.jpg"
               alt="Hot Water and Heating Services"
               width={600}
               height={400}

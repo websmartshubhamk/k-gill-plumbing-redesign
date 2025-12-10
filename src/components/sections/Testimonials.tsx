@@ -90,7 +90,7 @@ export default function Testimonials() {
   const handleMouseLeave = () => setIsAutoPlaying(true)
 
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -141,7 +141,7 @@ export default function Testimonials() {
                             <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
                           ))}
                         </div>
-                        <p className="text-gray-700 mb-4 italic leading-relaxed">"{testimonial.text}"</p>
+                        <p className="text-gray-700 mb-4 italic leading-relaxed">{testimonial.text}</p>
                         <div className="flex items-center justify-between mt-auto">
                           <div>
                             <p className="font-semibold text-gray-900">{testimonial.name}</p>

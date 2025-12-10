@@ -108,32 +108,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="bg-brand-blue py-12 sm:py-16">
-        <div className="section-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
-            <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">20+</div>
-              <div className="text-blue-100 text-sm sm:text-base">Years Experience</div>
-            </div>
-            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">5000+</div>
-              <div className="text-blue-100 text-sm sm:text-base">Happy Customers</div>
-            </div>
-            <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">24/7</div>
-              <div className="text-blue-100 text-sm sm:text-base">Emergency Service</div>
-            </div>
-            <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">100%</div>
-              <div className="text-blue-100 text-sm sm:text-base">Satisfaction Rate</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -156,8 +132,8 @@ export default function Home() {
                   transform: 'translateY(20px)'
                 }}
               >
-                <div className="mb-4 p-3 bg-brand-blue/10 rounded-lg w-fit group-hover:bg-brand-blue group-hover:scale-110 transition-all duration-300">
-                  <service.icon className="h-8 w-8 text-brand-blue group-hover:text-white transition-colors duration-300" />
+                <div className="mb-4 p-3 bg-brand-blue rounded-lg w-fit group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
+                  <service.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors">
                   {service.title}
@@ -181,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-brand-blue text-white">
+      <section className="section-padding bg-gradient-to-br from-brand-blue to-blue-800 text-white">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -196,7 +172,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="text-center">
-                <div className="mb-4 p-4 bg-white/10 rounded-lg w-fit mx-auto">
+                <div className="mb-4 p-4 bg-brand-orange rounded-lg w-fit mx-auto">
                   <benefit.icon className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
@@ -211,7 +187,7 @@ export default function Home() {
       <Testimonials />
 
       {/* Service Areas Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gradient-to-br from-white to-gray-50">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

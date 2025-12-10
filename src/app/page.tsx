@@ -15,7 +15,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Testimonials from '@/components/sections/Testimonials'
 import Certifications from '@/components/sections/Certifications'
-import FloatingCTA from '@/components/ui/FloatingCTA'
 
 const services = [
   {
@@ -297,9 +296,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Floating Emergency CTA */}
-      <FloatingCTA />
     </>
   )
 }

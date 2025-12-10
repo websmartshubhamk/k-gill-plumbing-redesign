@@ -1,7 +1,6 @@
 import { Phone, MessageSquare, Wrench, Flame, Bath, Clock, Shield, Award } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import QuoteCalculator from '@/components/ui/QuoteCalculator'
 import Testimonials from '@/components/sections/Testimonials'
 import Certifications from '@/components/sections/Certifications'
 
@@ -159,15 +158,6 @@ export default function Home() {
                 <p className="text-blue-100">{benefit.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Quote Calculator Section */}
-      <section className="section-padding">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto">
-            <QuoteCalculator />
           </div>
         </div>
       </section>

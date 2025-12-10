@@ -213,10 +213,6 @@ export default function Home() {
             </div>
             
             <div className="text-center md:text-left">
-              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full mb-6">
-                <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-semibold">Covering 30+ Mile Radius</span>
-              </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Local Experts, Regional Coverage
               </h3>

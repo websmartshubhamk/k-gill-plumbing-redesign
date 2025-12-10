@@ -87,22 +87,6 @@ export default function Home() {
                 Professional, reliable, and affordable plumbing solutions. 
                 Available 24/7 for emergencies. Gas Safe registered engineers.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="tel:07990806810"
-                  className="flex items-center justify-center gap-2 px-6 py-4 btn-emergency rounded-lg font-semibold text-lg emergency-pulse shadow-lg"
-                >
-                  <Phone className="h-5 w-5" />
-                  07990 806810
-                </a>
-                <a
-                  href="https://wa.me/447990806810"
-                  className="flex items-center justify-center gap-2 px-6 py-4 btn-whatsapp rounded-lg font-semibold text-lg shadow-lg"
-                >
-                  <WhatsAppIcon className="h-5 w-5" />
-                  WhatsApp Us
-                </a>
-              </div>
             </div>
           </div>
         </div>

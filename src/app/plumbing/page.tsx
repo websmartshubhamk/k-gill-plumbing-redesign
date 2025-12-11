@@ -62,21 +62,6 @@ export default function PlumbingPage() {
               From emergency repairs to new installations, K Gill Plumbing provides 
               reliable, professional plumbing services across Hitchin, Stevenage, and Letchworth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:07990806810"
-                className="flex items-center justify-center gap-2 px-6 py-4 btn-emergency rounded-lg font-semibold text-lg emergency-pulse"
-              >
-                <Phone className="h-5 w-5" />
-                Emergency: 07990 806810
-              </a>
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-2 px-6 py-4 btn-secondary rounded-lg font-semibold text-lg"
-              >
-                Get a Free Quote
-              </Link>
-            </div>
           </div>
         </div>
       </section>

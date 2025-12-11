@@ -74,22 +74,6 @@ export default function HeatingPage() {
               Gas Safe registered heating engineers providing boiler installation, 
               servicing, and repairs. Keep your home warm and safe with K Gill Plumbing & Heating.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:07990806810"
-                className="flex items-center justify-center gap-2 px-6 py-4 btn-primary rounded-lg font-semibold text-lg"
-              >
-                <Phone className="h-5 w-5" />
-                Call: 07990 806810
-              </a>
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-2 px-6 py-4 btn-secondary rounded-lg font-semibold text-lg"
-              >
-                <Calendar className="h-5 w-5" />
-                Book a Service
-              </Link>
-            </div>
             <div className="mt-6">
               <Image
                 src="/images/1logos.png"

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, Phone } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 // WhatsApp Icon
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -28,6 +29,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,11 +40,16 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [pathname])
+
   return (
-    <header className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] md:w-auto max-w-7xl ${
+    <header className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-auto max-w-7xl ${
       scrolled ? 'top-2' : 'top-4'
     }`}>
-      <div className={`bg-white/90 backdrop-blur-lg shadow-2xl rounded-full border border-gray-100/50 transition-all duration-300 hover:shadow-3xl ${
+      <div className={`bg-white/95 backdrop-blur-lg shadow-2xl hover:shadow-3xl rounded-full border border-gray-200/50 transition-all duration-300 ${
         scrolled ? 'py-2 px-4 sm:px-6 md:px-8' : 'py-3 px-6 sm:px-8 md:px-10'
       }`}>
         <div className="flex items-center justify-between gap-4 md:gap-8">
@@ -54,23 +61,30 @@ export default function Header() {
               width={200}
               height={66}
               className={`w-auto transition-all duration-300 ${
-                scrolled ? 'h-8 md:h-10' : 'h-10 md:h-12'
+                scrolled ? 'h-8 md:h-9 lg:h-10' : 'h-9 md:h-10 lg:h-12'
               }`}
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 xl:space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-brand-blue font-medium transition-all duration-200 hover:scale-105"
-              >
-                {item.name}
-              </Link>
-            ))}
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`font-medium transition-all duration-200 hover:scale-105 text-sm lg:text-base ${
+                    isActive 
+                      ? 'text-brand-blue' 
+                      : 'text-gray-700 hover:text-brand-blue'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
+            })}
           </nav>
 
           {/* CTA Buttons */}
@@ -109,16 +123,23 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 mt-4 bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border border-gray-100 overflow-hidden animate-slide-down">
           <div className="px-6 py-6 space-y-3">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-3 text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-xl font-medium transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const isActive = pathname === item.href
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-4 py-3 rounded-xl font-medium transition-colors ${
+                    isActive
+                      ? 'bg-brand-blue text-white'
+                      : 'text-gray-700 hover:text-brand-blue hover:bg-gray-50'
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
+            })}
             <div className="pt-4 space-y-3 border-t">
               <a
                 href="tel:07990806810"

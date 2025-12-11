@@ -52,8 +52,8 @@ const benefits = [
     isGasSafe: true,
   },
   {
-    title: '20+ Years Experience',
-    description: 'Trusted by homeowners across Hitchin, Stevenage, and Letchworth.',
+    title: 'Over 10 Years Experience',
+    description: 'Providing Hertfordshire with reliable and affordable service.',
     icon: Award,
   },
 ]
@@ -83,9 +83,12 @@ export default function Home() {
                 Expert Plumbing & Heating Services in{' '}
                 <span className="text-brand-orange">Hertfordshire</span>
               </h1>
+              <p className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-brand-orange mb-4">
+                EXPERTISE YOU CAN TRUST
+              </p>
               <p className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl text-gray-200 mb-6 sm:mb-8 xl:mb-10">
-                Professional, reliable, and affordable plumbing solutions. 
-                Available 24/7 for emergencies. Gas Safe registered engineers.
+                Honest, Affordable & Experienced<br />
+                Clear Solutions for your Plumbing & Heating
               </p>
             </div>
           </div>
@@ -148,7 +151,7 @@ export default function Home() {
               Why Choose K Gill Plumbing & Heating?
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-              With over 20 years of experience, we're the trusted choice for 
+              With over 10 years of experience, we're the trusted choice for 
               homeowners across Hertfordshire.
             </p>
           </div>

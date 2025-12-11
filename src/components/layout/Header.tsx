@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, Phone } from 'lucide-react'
@@ -27,30 +27,46 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white shadow-md">
-      <div className="section-container">
-        <div className="flex items-center justify-between h-16 md:h-20 xl:h-24">
+    <header className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] md:w-auto max-w-7xl ${
+      scrolled ? 'top-2' : 'top-4'
+    }`}>
+      <div className={`bg-white/90 backdrop-blur-lg shadow-2xl rounded-full border border-gray-100/50 transition-all duration-300 hover:shadow-3xl ${
+        scrolled ? 'py-2 px-4 sm:px-6 md:px-8' : 'py-3 px-6 sm:px-8 md:px-10'
+      }`}>
+        <div className="flex items-center justify-between gap-4 md:gap-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <Image
               src="/images/Logo.png"
               alt="K Gill Plumbing & Heating"
               width={200}
               height={66}
-              className="h-10 md:h-12 xl:h-16 w-auto"
+              className={`w-auto transition-all duration-300 ${
+                scrolled ? 'h-8 md:h-10' : 'h-10 md:h-12'
+              }`}
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 xl:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-brand-blue font-medium transition-colors"
+                className="text-gray-700 hover:text-brand-blue font-medium transition-all duration-200 hover:scale-105"
               >
                 {item.name}
               </Link>
@@ -58,32 +74,32 @@ export default function Header() {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-3 flex-shrink-0">
             <a
               href="tel:07990806810"
-              className="flex items-center gap-2 px-4 py-2 btn-emergency rounded-lg font-semibold text-sm"
+              className="flex items-center gap-2 px-4 py-2 bg-emergency text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-200 hover:scale-105"
             >
               <Phone className="h-4 w-4" />
-              Emergency: 07990 806810
+              <span className="hidden xl:inline">Emergency:</span> 07990 806810
             </a>
             <a
               href="https://wa.me/447990806810"
-              className="flex items-center gap-2 px-4 py-2 btn-whatsapp rounded-lg font-semibold text-sm"
+              className="flex items-center gap-2 px-4 py-2 bg-whatsapp text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-200 hover:scale-105"
             >
               <WhatsAppIcon className="h-4 w-4" />
-              WhatsApp
+              <span className="hidden xl:inline">WhatsApp</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className="h-6 w-6 text-gray-700" />
+              <X className="h-5 w-5 text-gray-700" />
             ) : (
-              <Menu className="h-6 w-6 text-gray-700" />
+              <Menu className="h-5 w-5 text-gray-700" />
             )}
           </button>
         </div>
@@ -91,13 +107,13 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t animate-slide-down">
-          <div className="px-4 py-4 space-y-3">
+        <div className="absolute top-full left-0 right-0 mt-4 bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border border-gray-100 overflow-hidden animate-slide-down">
+          <div className="px-6 py-6 space-y-3">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 text-gray-700 hover:text-brand-blue font-medium"
+                className="block px-4 py-3 text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-xl font-medium transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -106,14 +122,14 @@ export default function Header() {
             <div className="pt-4 space-y-3 border-t">
               <a
                 href="tel:07990806810"
-                className="flex items-center justify-center gap-2 px-4 py-3 btn-emergency rounded-lg font-semibold"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-emergency text-white rounded-full font-semibold hover:shadow-lg transition-all"
               >
                 <Phone className="h-4 w-4" />
                 Emergency: 07990 806810
               </a>
               <a
                 href="https://wa.me/447990806810"
-                className="flex items-center justify-center gap-2 px-4 py-3 btn-whatsapp rounded-lg font-semibold"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white rounded-full font-semibold hover:shadow-lg transition-all"
               >
                 <WhatsAppIcon className="h-4 w-4" />
                 WhatsApp

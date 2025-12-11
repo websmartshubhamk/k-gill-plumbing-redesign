@@ -91,6 +91,17 @@ export default function Home() {
                 Clear Solutions for your Plumbing & Heating
               </p>
             </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                <Image
+                  src="/images/1logos.png"
+                  alt="Gas Safe Registered"
+                  width={180}
+                  height={120}
+                  className="h-auto w-full max-w-[180px]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -80,14 +80,27 @@ function ContactForm() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
         <div className="relative z-10 section-container py-16 sm:py-20 xl:py-24">
-          <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-6 xl:mb-8">
-              Get in Touch
-            </h1>
-            <p className="text-lg md:text-xl xl:text-2xl text-gray-200 mb-8 xl:mb-10">
-              Need a plumber? Get a free quote or book our services. 
-              We're here to help with all your plumbing and heating needs.
-            </p>
+          <div className="flex flex-col lg:flex-row gap-12 items-center justify-between">
+            <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-6 xl:mb-8">
+                Get in Touch
+              </h1>
+              <p className="text-lg md:text-xl xl:text-2xl text-gray-200 mb-8 xl:mb-10">
+                Need a plumber? Get a free quote or book our services. 
+                We're here to help with all your plumbing and heating needs.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                <Image
+                  src="/images/1logos.png"
+                  alt="Gas Safe Registered"
+                  width={150}
+                  height={100}
+                  className="h-auto w-full max-w-[150px]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

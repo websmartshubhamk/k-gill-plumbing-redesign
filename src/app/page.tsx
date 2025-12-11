@@ -14,6 +14,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 import Link from 'next/link'
 import Image from 'next/image'
 import Testimonials from '@/components/sections/Testimonials'
+import InteractiveServiceMap from '@/components/sections/InteractiveServiceMap'
 
 const services = [
   {
@@ -245,57 +246,8 @@ export default function Home() {
       {/* Testimonials Section */}
       <Testimonials />
 
-      {/* Service Areas Section */}
-      <section className="section-padding bg-gradient-to-br from-white to-gray-50">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Areas We Serve
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Providing professional plumbing and heating services across Hertfordshire and surrounding areas.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 xl:gap-16 2xl:gap-20 items-center">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 xl:gap-6">
-              {[
-                'Hitchin', 'Stevenage', 'Letchworth', 'Baldock', 
-                'Royston', 'Knebworth', 'Codicote', 'Welwyn', 
-                'Hertford', 'Ware', 'St Albans', 'Hatfield'
-              ].map((area, index) => (
-                <div
-                  key={area}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-brand-blue hover:text-white transition-all duration-300 cursor-pointer group"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="font-semibold">{area}</div>
-                </div>
-              ))}
-            </div>
-            
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Local Experts, Regional Coverage
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Based in Hitchin, we serve customers throughout Hertfordshire and beyond. 
-                Our local knowledge combined with professional expertise ensures quick 
-                response times and reliable service.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="tel:07990806810"
-                  className="flex items-center justify-center gap-2 px-6 py-3 bg-brand-blue text-white rounded-lg font-semibold hover:bg-brand-blue-dark transition-colors"
-                >
-                  <Phone className="h-5 w-5" />
-                  Check Coverage
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Interactive Service Areas Map */}
+      <InteractiveServiceMap />
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-brand-orange to-orange-700">

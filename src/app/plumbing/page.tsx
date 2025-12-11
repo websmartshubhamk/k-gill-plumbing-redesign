@@ -41,23 +41,24 @@ export default function PlumbingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white">
+      <section className="relative min-h-[60vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/Plumbing4.jpg"
-            alt="Plumbing Services Background"
+            alt="Professional Plumbing Services"
             fill
-            className="object-cover opacity-10"
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 section-container section-padding">
+        <div className="relative z-10 section-container py-16 sm:py-20">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Professional Plumbing Services in{' '}
-              <span className="text-gradient">Hertfordshire</span>
+              <span className="text-brand-orange">Hertfordshire</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
               From emergency repairs to new installations, K Gill Plumbing provides 
               reliable, professional plumbing services across Hitchin, Stevenage, and Letchworth.
             </p>

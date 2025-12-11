@@ -53,24 +53,24 @@ export default function HeatingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 to-white">
+      <section className="relative min-h-[60vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/plumbingTap.jpg"
-            alt="Hot Water and Heating Services"
+            src="/images/heating_home.jpg"
+            alt="Expert Heating & Boiler Services"
             fill
-            className="object-cover object-center opacity-15"
-            style={{ objectPosition: '50% 30%' }}
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 section-container section-padding">
+        <div className="relative z-10 section-container py-16 sm:py-20">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Expert Heating & Boiler Services in{' '}
-              <span className="text-gradient">Hertfordshire</span>
+              <span className="text-brand-orange">Hertfordshire</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
               Gas Safe registered heating engineers providing boiler installation, 
               servicing, and repairs. Keep your home warm and safe with K Gill Plumbing & Heating.
             </p>
@@ -90,9 +90,14 @@ export default function HeatingPage() {
                 Book a Service
               </Link>
             </div>
-            <div className="mt-6 flex items-center gap-2 text-brand-blue">
-              <Shield className="h-5 w-5" />
-              <span className="font-semibold">Gas Safe Registered Engineers</span>
+            <div className="mt-6">
+              <Image
+                src="/images/1logos.png"
+                alt="Gas Safe Registered"
+                width={120}
+                height={80}
+                className="h-auto max-w-[120px]"
+              />
             </div>
           </div>
         </div>

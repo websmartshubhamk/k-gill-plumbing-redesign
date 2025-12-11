@@ -68,7 +68,7 @@ export default function BathroomsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center bg-gray-900">
+      <section className="relative min-h-[60vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/plumbingTap.jpg"
@@ -79,7 +79,7 @@ export default function BathroomsPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 section-container section-padding">
+        <div className="relative z-10 section-container py-16 sm:py-20">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Professional Bathroom Installation in{' '}
@@ -199,17 +199,12 @@ export default function BathroomsPage() {
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
-              <div key={step.step} className="text-center">
+              <div key={step.step} className="text-center relative">
                 <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                   {step.step}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
                 <p className="text-gray-600 text-sm">{step.description}</p>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-300 -translate-x-1/2">
-                    <div className="absolute right-0 w-2 h-2 bg-gray-300 rounded-full -translate-y-1/2" />
-                  </div>
-                )}
               </div>
             ))}
           </div>

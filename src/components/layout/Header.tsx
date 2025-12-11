@@ -46,13 +46,14 @@ export default function Header() {
   }, [pathname])
 
   return (
-    <header className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-auto max-w-6xl xl:max-w-7xl ${
-      scrolled ? 'top-2' : 'top-4'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? 'py-2' : 'py-4'
     }`}>
-      <div className={`bg-white/95 backdrop-blur-lg shadow-2xl hover:shadow-3xl rounded-full border border-gray-200/50 transition-all duration-300 ${
-        scrolled ? 'py-2 px-3 sm:px-4 md:px-6' : 'py-3 px-4 sm:px-6 md:px-8'
-      }`}>
-        <div className="flex items-center justify-between gap-2 md:gap-4 lg:gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`bg-white/95 backdrop-blur-lg shadow-2xl hover:shadow-3xl rounded-full border border-gray-200/50 transition-all duration-300 ${
+          scrolled ? 'py-2 px-4 sm:px-6' : 'py-3 px-6 sm:px-8'
+        }`}>
+          <div className="flex items-center justify-between gap-2 md:gap-4 lg:gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <Image
@@ -88,19 +89,19 @@ export default function Header() {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-2 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a
               href="tel:07990806810"
-              className="flex items-center gap-1 px-3 py-2 bg-emergency text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-200 whitespace-nowrap"
+              className="flex items-center gap-2 px-4 py-2.5 bg-emergency text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-200 whitespace-nowrap"
             >
               <Phone className="h-4 w-4 flex-shrink-0" />
               <span>Emergency: 07990 806810</span>
             </a>
             <a
               href="https://wa.me/447990806810"
-              className="flex items-center gap-2 px-3 py-2 bg-whatsapp text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2.5 bg-whatsapp text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-200"
             >
-              <WhatsAppIcon className="h-4 w-4" />
+              <WhatsAppIcon className="h-4 w-4 flex-shrink-0" />
               <span className="whitespace-nowrap">WhatsApp</span>
             </a>
           </div>
@@ -118,10 +119,12 @@ export default function Header() {
           </button>
         </div>
       </div>
+    </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 mt-4 bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border border-gray-100 overflow-hidden animate-slide-down">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+          <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border border-gray-100 overflow-hidden animate-slide-down">
           <div className="px-6 py-6 space-y-3">
             {navigation.map((item) => {
               const isActive = pathname === item.href
@@ -157,6 +160,7 @@ export default function Header() {
               </a>
             </div>
           </div>
+        </div>
         </div>
       )}
     </header>

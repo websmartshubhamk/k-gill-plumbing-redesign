@@ -102,7 +102,7 @@ function ContactForm() {
               <a href="tel:07990806810" className="text-brand-blue hover:text-brand-blue-dark font-semibold">
                 07990 806810
               </a>
-              <p className="text-sm text-gray-600 mt-2">24/7 Emergency Service</p>
+              <p className="text-sm text-gray-600 mt-2">Mon-Fri 8-7, Sat 8-12</p>
             </div>
 
             <div className="card text-center">
@@ -255,7 +255,7 @@ function ContactForm() {
                       Monday - Friday: 8:00 AM - 7:00 PM<br />
                       Saturday: 8:00 AM - 12:00 PM<br />
                       Sunday: Closed<br />
-                      <span className="text-emergency font-semibold">24/7 Emergency Service Available</span>
+                      <span className="text-gray-900 font-semibold">Sunday: Closed</span>
                     </p>
                   </div>
                 </div>

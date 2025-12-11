@@ -156,11 +156,11 @@ export default function PlumbingPage() {
       <section className="section-padding bg-emergency text-white">
         <div className="section-container text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Emergency Plumber Available 24/7
+            Emergency Plumber Available
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Burst pipe? Major leak? Don't panic! We offer round-the-clock 
-            emergency plumbing services to get your problem fixed fast.
+            Burst pipe? Major leak? Don't panic! Call us during business hours
+            for fast emergency plumbing services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

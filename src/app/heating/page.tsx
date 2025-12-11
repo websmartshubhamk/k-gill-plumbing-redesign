@@ -16,7 +16,7 @@ const services = [
   },
   {
     title: 'Boiler Repairs',
-    description: '24/7 emergency boiler repair service for all makes and models.',
+    description: 'Emergency boiler repair service for all makes and models.',
     icon: AlertCircle,
     urgent: true,
   },
@@ -121,7 +121,7 @@ export default function HeatingPage() {
                       {service.title}
                       {service.urgent && (
                         <span className="ml-2 text-sm text-emergency font-normal">
-                          24/7 Emergency
+                          Emergency Service
                         </span>
                       )}
                     </h3>

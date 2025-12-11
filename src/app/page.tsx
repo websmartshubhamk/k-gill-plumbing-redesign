@@ -41,11 +41,6 @@ const services = [
 
 const benefits = [
   {
-    title: '24/7 Emergency Service',
-    description: 'Available round the clock for urgent plumbing and heating emergencies.',
-    icon: Clock,
-  },
-  {
     title: 'Gas Safe Registered',
     description: 'Fully qualified and registered to work safely on all gas appliances.',
     icon: Shield,
@@ -55,6 +50,11 @@ const benefits = [
     title: 'Over 10 Years Experience',
     description: 'Providing Hertfordshire with reliable and affordable service.',
     icon: Award,
+  },
+  {
+    title: 'Local & Trusted',
+    description: 'Serving Hitchin, Stevenage, Letchworth and surrounding areas.',
+    icon: Users,
   },
 ]
 

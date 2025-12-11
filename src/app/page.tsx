@@ -77,14 +77,14 @@ export default function Home() {
         </div>
         
         {/* Hero Content */}
-        <div className="section-container relative z-10 py-20 sm:py-24 lg:py-32">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="max-w-2xl animate-slide-in-left text-center md:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+        <div className="section-container relative z-10 py-20 sm:py-24 lg:py-32 xl:py-36">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-2xl xl:max-w-3xl 2xl:max-w-4xl animate-slide-in-left text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 xl:mb-8 leading-tight">
                 Expert Plumbing & Heating Services in{' '}
                 <span className="text-brand-orange">Hertfordshire</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl text-gray-200 mb-6 sm:mb-8 xl:mb-10">
                 Professional, reliable, and affordable plumbing solutions. 
                 Available 24/7 for emergencies. Gas Safe registered engineers.
               </p>
@@ -106,7 +106,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
             {services.map((service, index) => (
               <Link
                 key={service.title}
@@ -154,7 +154,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 xl:grid-cols-3 gap-8 xl:gap-12 2xl:gap-16">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="text-center">
                 {benefit.isGasSafe ? (
@@ -195,8 +195,8 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-12 xl:gap-16 2xl:gap-20 items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 xl:gap-6">
               {[
                 'Hitchin', 'Stevenage', 'Letchworth', 'Baldock', 
                 'Royston', 'Knebworth', 'Codicote', 'Welwyn', 

@@ -31,15 +31,15 @@ export default function Header() {
   return (
     <header className="fixed w-full top-0 z-50 bg-white shadow-md">
       <div className="section-container">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-20 xl:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/images/Logo.png"
               alt="K Gill Plumbing & Heating"
-              width={150}
-              height={50}
-              className="h-10 md:h-12 w-auto"
+              width={200}
+              height={66}
+              className="h-10 md:h-12 xl:h-16 w-auto"
               priority
             />
           </Link>

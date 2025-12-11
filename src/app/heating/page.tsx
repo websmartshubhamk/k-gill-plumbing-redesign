@@ -64,13 +64,13 @@ export default function HeatingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 section-container py-16 sm:py-20">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="relative z-10 section-container py-16 sm:py-20 xl:py-24">
+          <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
+            <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-6 xl:mb-8">
               Expert Heating & Boiler Services in{' '}
               <span className="text-brand-orange">Hertfordshire</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8">
+            <p className="text-lg md:text-xl xl:text-2xl text-gray-200 mb-8 xl:mb-10">
               Gas Safe registered heating engineers providing boiler installation, 
               servicing, and repairs. Keep your home warm and safe with K Gill Plumbing & Heating.
             </p>

@@ -14,7 +14,6 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 import Link from 'next/link'
 import Image from 'next/image'
 import Testimonials from '@/components/sections/Testimonials'
-import Certifications from '@/components/sections/Certifications'
 
 const services = [
   {
@@ -234,9 +233,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Certifications Section */}
-      <Certifications />
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-brand-orange to-orange-700">

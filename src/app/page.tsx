@@ -111,7 +111,7 @@ export default function Home() {
       <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-700 mb-6 leading-tight">
               Our Professional Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -190,55 +190,6 @@ export default function Home() {
                 <p className="text-blue-100">{benefit.description}</p>
               </div>
             ))}
-          </div>
-
-          {/* Gas Safe Information Box */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Gas Safe Registered Engineers
-                </h3>
-                <p className="text-blue-100 mb-4">
-                  All our engineers are Gas Safe registered, meaning they are legally 
-                  qualified to work on gas appliances. This certification ensures your 
-                  safety and compliance with UK regulations.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-400" />
-                    <span className="text-blue-50">Annual safety inspections</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-400" />
-                    <span className="text-blue-50">Boiler installations & repairs</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-400" />
-                    <span className="text-blue-50">Gas leak detection & repair</span>
-                  </div>
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="bg-white p-6 rounded-lg shadow-lg">
-                  <div className="mb-4">
-                    <Image
-                      src="/images/1logos.png"
-                      alt="Gas Safe Register"
-                      width={150}
-                      height={100}
-                      className="mx-auto"
-                    />
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">
-                    Gas Safe Register
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Registration No: 123456
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

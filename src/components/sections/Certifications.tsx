@@ -6,8 +6,8 @@ const certifications = [
     name: 'Gas Safe Registered',
     description: 'Fully qualified to work on gas appliances',
     icon: Shield,
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-50',
+    color: 'text-white',
+    bgColor: 'bg-gray-800',
   },
   {
     name: '20+ Years Experience',
@@ -100,7 +100,7 @@ export default function Certifications() {
                     Gas Safe Register
                   </h4>
                   <p className="text-sm text-gray-600">
-                    Registration No: 123456
+                    Certified Engineers
                   </p>
                 </div>
               </div>

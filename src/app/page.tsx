@@ -15,6 +15,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Testimonials from '@/components/sections/Testimonials'
 import InteractiveServiceMap from '@/components/sections/InteractiveServiceMap'
+import GlobalCTA from '@/components/sections/GlobalCTA'
 
 const services = [
   {
@@ -190,33 +191,8 @@ export default function Home() {
       {/* Interactive Service Areas Map */}
       <InteractiveServiceMap />
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-brand-orange to-orange-700">
-        <div className="section-container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Need a Professional Plumber?
-          </h2>
-          <p className="text-lg text-orange-100 mb-8 max-w-2xl mx-auto">
-            Get in touch today for a free quote on any plumbing or heating work. 
-            We offer competitive prices and quality workmanship.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:07990806810"
-              className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-orange rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-            >
-              <Phone className="h-5 w-5" />
-              Call: 07990 806810
-            </a>
-            <Link
-              href="/contact"
-              className="flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors"
-            >
-              Get a Free Quote
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Global CTA Section */}
+      <GlobalCTA />
     </>
   )
 }

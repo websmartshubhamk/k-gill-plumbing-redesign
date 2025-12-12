@@ -1,6 +1,7 @@
 import { Phone, Flame, Thermometer, Shield, Settings, AlertCircle, CheckCircle, Calendar } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import GlobalCTA from '@/components/sections/GlobalCTA'
 
 const services = [
   {
@@ -191,36 +192,8 @@ export default function HeatingPage() {
         </div>
       </section>
 
-      {/* Service Reminder CTA */}
-      <section className="section-padding bg-brand-blue text-white">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto text-center">
-            <Flame className="h-16 w-16 mx-auto mb-6 animate-pulse" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Is Your Boiler Due for a Service?
-            </h2>
-            <p className="text-lg mb-8 text-blue-100">
-              Annual boiler servicing keeps your heating system efficient, safe, and 
-              covered under warranty. Don't wait until winter - book your service today!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:07990806810"
-                className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-blue rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-              >
-                <Calendar className="h-5 w-5" />
-                Book Annual Service
-              </a>
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors"
-              >
-                Get a Free Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Global CTA Section */}
+      <GlobalCTA />
     </>
   )
 }

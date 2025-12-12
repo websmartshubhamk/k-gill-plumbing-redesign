@@ -1,6 +1,7 @@
 import { Phone, Bath, ShowerHead, Droplets, Palette, Ruler, CheckCircle, Star, Shield } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import GlobalCTA from '@/components/sections/GlobalCTA'
 
 const services = [
   {
@@ -209,52 +210,8 @@ export default function BathroomsPage() {
         </div>
       </section>
 
-      {/* Luxury CTA */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your Bathroom?
-            </h2>
-            <p className="text-lg mb-8 text-gray-300">
-              From modern minimalist designs to traditional luxury suites, we'll create 
-              the perfect bathroom for your home and budget.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-6 mb-8">
-              <div className="text-center">
-                <Ruler className="h-8 w-8 mx-auto mb-2 text-brand-blue-light" />
-                <h3 className="font-semibold mb-1">Free Design Service</h3>
-                <p className="text-sm text-gray-400">Professional bathroom planning</p>
-              </div>
-              <div className="text-center">
-                <Shield className="h-8 w-8 mx-auto mb-2 text-brand-blue-light" />
-                <h3 className="font-semibold mb-1">Fully Guaranteed</h3>
-                <p className="text-sm text-gray-400">All work comes with warranty</p>
-              </div>
-              <div className="text-center">
-                <CheckCircle className="h-8 w-8 mx-auto mb-2 text-brand-blue-light" />
-                <h3 className="font-semibold mb-1">Fixed Price Quote</h3>
-                <p className="text-sm text-gray-400">No hidden costs or surprises</p>
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:07990806810"
-                className="flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue text-white rounded-lg font-semibold text-lg hover:bg-brand-blue-dark transition-colors"
-              >
-                <Phone className="h-5 w-5" />
-                Book Free Consultation
-              </a>
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors"
-              >
-                View Our Work
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Global CTA Section */}
+      <GlobalCTA />
     </>
   )
 }

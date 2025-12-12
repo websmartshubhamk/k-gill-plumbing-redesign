@@ -40,14 +40,14 @@ const boilerBrands = [
 ]
 
 const heatingServices = [
-  'Radiator installation and replacement',
-  'Power flushing',
-  'Thermostatic valve fitting',
-  'System upgrades',
-  'Underfloor heating',
-  'Smart thermostat installation',
-  'Gas safety certificates',
-  'Landlord certificates',
+  'Boilers - Installation & Repairs',
+  'Radiators - Installation & Repairs',
+  'Gas Safety Certificates',
+  'Thermostats',
+  'Hot Water Cylinders',
+  'Electrical Wiring for Heating',
+  'Immersion Heaters',
+  'Underfloor Heating Installations',
 ]
 
 export default function HeatingPage() {
@@ -68,12 +68,13 @@ export default function HeatingPage() {
         <div className="relative z-10 section-container py-16 sm:py-20 xl:py-24">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
             <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-6 xl:mb-8">
-              Expert Heating & Boiler Services in{' '}
-              <span className="text-brand-orange">Hertfordshire</span>
+              DON'T GET LEFT IN THE COLD
             </h1>
+            <p className="text-xl md:text-2xl xl:text-3xl text-brand-orange mb-4">
+              CALL US FOR A PROFESSIONAL & RELIABLE SERVICE.
+            </p>
             <p className="text-lg md:text-xl xl:text-2xl text-gray-200 mb-8 xl:mb-10">
-              Gas Safe registered heating engineers providing boiler installation, 
-              servicing, and repairs. Keep your home warm and safe with K Gill Plumbing & Heating.
+              We understand how much of an inconvenience it is to you when your heating breaks down, which is why we offer a swift response.
             </p>
             <div className="mt-6">
               <Image
@@ -92,7 +93,7 @@ export default function HeatingPage() {
       <section className="section-padding">
         <div className="section-container">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            Comprehensive Heating Services
+            HEATING SERVICES
           </h2>
           <p className="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
             From new boiler installations to emergency repairs, we provide complete 
@@ -131,6 +132,12 @@ export default function HeatingPage() {
                 </div>
               </div>
             ))}
+          </div>
+          
+          <div className="mt-12 text-center max-w-3xl mx-auto">
+            <p className="text-gray-600 text-lg italic">
+              We treat every home we work in with the same care and attention we would show our own homes, making sure that any mess is fully cleared up once we've finished.
+            </p>
           </div>
         </div>
       </section>

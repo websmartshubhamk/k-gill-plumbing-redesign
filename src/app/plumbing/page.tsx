@@ -28,14 +28,15 @@ const services = [
 ]
 
 const commonProblems = [
-  'Burst pipes and water leaks',
-  'Blocked toilets and drains',
-  'Dripping taps and fixtures',
-  'Low water pressure issues',
-  'Toilet cistern problems',
-  'Sink and bath blockages',
-  'Radiator leaks',
-  'Outdoor tap installation',
+  'Drains & Drainage',
+  'Pipes',
+  'Leaks & Overflows',
+  'Blockages',
+  'Ball Valves',
+  'Dripping Taps',
+  'Hot & Cold Tanks',
+  'Appliance Installation',
+  'Bathrooms',
 ]
 
 export default function PlumbingPage() {
@@ -58,12 +59,13 @@ export default function PlumbingPage() {
             <div className="grid lg:grid-cols-[1fr,auto] gap-8 items-center">
               <div className="max-w-3xl">
                 <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-4">
-                  Professional Plumbing Services in{' '}
-                  <span className="text-brand-orange">Hertfordshire</span>
+                  DRIPPING TAP OR A BURST PIPE CAUSING YOU TROUBLE?
                 </h1>
+                <p className="text-xl md:text-2xl text-brand-orange mb-4">
+                  OUR QUALIFIED TEAM ARE ON HAND TO PROVIDE SPEEDY REPAIRS.
+                </p>
                 <p className="text-lg md:text-xl text-gray-200">
-                  From emergency repairs to new installations, K Gill Plumbing provides 
-                  reliable, professional plumbing services across Hitchin, Stevenage, and Letchworth.
+                  Whether you need a dripping tap fixed or a full bathroom installed, our experienced and fully-trained Plumbers can provide you with a quality, long lasting solution - which won't break the bank.
                 </p>
               </div>
               <div className="flex lg:justify-end">
@@ -86,7 +88,7 @@ export default function PlumbingPage() {
       <section className="section-padding">
         <div className="section-container">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            Our Plumbing Services
+            PLUMBING SERVICES
           </h2>
           <p className="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
             We offer a comprehensive range of plumbing services to keep your home's 
@@ -115,6 +117,12 @@ export default function PlumbingPage() {
                 <p className="text-gray-600 group-hover:text-gray-700 transition-colors">{service.description}</p>
               </div>
             ))}
+          </div>
+          
+          <div className="mt-12 text-center max-w-3xl mx-auto">
+            <p className="text-gray-600 text-lg italic">
+              We treat every home we work in with the same care and attention we would show our own homes, making sure that any mess is fully cleared up once we've finished.
+            </p>
           </div>
         </div>
       </section>

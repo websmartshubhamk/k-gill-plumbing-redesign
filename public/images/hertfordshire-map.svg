@@ -1,0 +1,51 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f3f4f6"/>
+  
+  <!-- Map outline (simplified Hertfordshire shape) -->
+  <path d="M 200 150 L 350 120 L 500 140 L 600 180 L 650 250 L 620 350 L 550 420 L 400 450 L 250 430 L 150 380 L 120 280 L 150 200 Z" 
+        fill="#e5e7eb" 
+        stroke="#9ca3af" 
+        stroke-width="2"/>
+  
+  <!-- Major roads representation -->
+  <path d="M 100 300 L 700 300" stroke="#d1d5db" stroke-width="3" opacity="0.5"/>
+  <path d="M 400 100 L 400 500" stroke="#d1d5db" stroke-width="3" opacity="0.5"/>
+  <path d="M 150 450 L 650 150" stroke="#d1d5db" stroke-width="2" opacity="0.3"/>
+  <path d="M 150 150 L 650 450" stroke="#d1d5db" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Town markers (approximate positions) -->
+  <!-- Hitchin (center) -->
+  <circle cx="400" cy="300" r="8" fill="#1E6BA8" stroke="white" stroke-width="2"/>
+  <text x="420" y="305" font-family="Arial, sans-serif" font-size="14" fill="#374151">Hitchin</text>
+  
+  <!-- Stevenage -->
+  <circle cx="480" cy="350" r="6" fill="#F97316" stroke="white" stroke-width="2"/>
+  <text x="495" y="355" font-family="Arial, sans-serif" font-size="12" fill="#374151">Stevenage</text>
+  
+  <!-- Letchworth -->
+  <circle cx="380" cy="250" r="6" fill="#F97316" stroke="white" stroke-width="2"/>
+  <text x="395" y="255" font-family="Arial, sans-serif" font-size="12" fill="#374151">Letchworth</text>
+  
+  <!-- St Albans -->
+  <circle cx="250" cy="400" r="6" fill="#F97316" stroke="white" stroke-width="2"/>
+  <text x="265" y="405" font-family="Arial, sans-serif" font-size="12" fill="#374151">St Albans</text>
+  
+  <!-- Welwyn -->
+  <circle cx="450" cy="380" r="6" fill="#F97316" stroke="white" stroke-width="2"/>
+  <text x="465" y="385" font-family="Arial, sans-serif" font-size="12" fill="#374151">Welwyn</text>
+  
+  <!-- Hertford -->
+  <circle cx="550" cy="330" r="6" fill="#F97316" stroke="white" stroke-width="2"/>
+  <text x="565" y="335" font-family="Arial, sans-serif" font-size="12" fill="#374151">Hertford</text>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1f2937">K Gill Plumbing Service Areas</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="520" width="150" height="60" fill="white" stroke="#e5e7eb" stroke-width="1" rx="5"/>
+  <circle cx="70" cy="540" r="6" fill="#1E6BA8" stroke="white" stroke-width="1"/>
+  <text x="85" y="545" font-family="Arial, sans-serif" font-size="12" fill="#374151">Main Base</text>
+  <circle cx="70" cy="560" r="5" fill="#F97316" stroke="white" stroke-width="1"/>
+  <text x="85" y="565" font-family="Arial, sans-serif" font-size="12" fill="#374151">Service Area</text>
+</svg>

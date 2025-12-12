@@ -1,4 +1,4 @@
-import { Phone, Wrench, Flame, Bath, Clock, Shield, Award, CheckCircle2, Users, Gauge } from 'lucide-react'
+import { Phone, Wrench, Flame, Bath, Award, CheckCircle2, Users } from 'lucide-react'
 
 // WhatsApp Icon
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -40,24 +40,6 @@ const services = [
   }
 ]
 
-const benefits = [
-  {
-    title: 'Gas Safe Registered',
-    description: 'Fully qualified and registered to work safely on all gas appliances.',
-    icon: Shield,
-    isGasSafe: true,
-  },
-  {
-    title: 'Over 10 Years Experience',
-    description: 'Providing Hertfordshire with reliable and affordable service.',
-    icon: Award,
-  },
-  {
-    title: 'Local & Trusted',
-    description: 'Serving Hitchin, Stevenage, Letchworth and surrounding areas.',
-    icon: Users,
-  },
-]
 
 export default function Home() {
   return (
@@ -155,41 +137,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="section-padding bg-gradient-to-br from-brand-blue to-blue-800 text-white">
+      {/* About Section */}
+      <section className="section-padding bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose K Gill Plumbing & Heating?
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              About K Gill Plumbing & Heating
             </h2>
-            <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-              With over 10 years of experience, we're the trusted choice for 
-              homeowners across Hertfordshire.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Over 10 years of trusted service providing honest, affordable, and experienced 
+              solutions for all your plumbing and heating needs.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 xl:grid-cols-3 gap-8 xl:gap-12 2xl:gap-16 mb-12">
-            {benefits.map((benefit) => (
-              <div key={benefit.title} className="text-center">
-                {benefit.isGasSafe ? (
-                  <div className="mb-4 mx-auto w-fit">
-                    <Image
-                      src="/images/1logos.png"
-                      alt="Gas Safe Registered"
-                      width={120}
-                      height={80}
-                      className="mx-auto"
-                    />
-                  </div>
-                ) : (
-                  <div className="mb-4 p-4 bg-brand-orange rounded-lg w-fit mx-auto">
-                    <benefit.icon className="h-10 w-10 text-white" />
-                  </div>
-                )}
-                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                <p className="text-blue-100">{benefit.description}</p>
+          <div className="grid md:grid-cols-3 xl:grid-cols-3 gap-8 xl:gap-12 2xl:gap-16">
+            <div className="text-center">
+              <div className="mb-4 mx-auto w-fit">
+                <Image
+                  src="/images/1logos.png"
+                  alt="Gas Safe Registered"
+                  width={120}
+                  height={80}
+                  className="mx-auto"
+                />
               </div>
-            ))}
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Gas Safe Registered</h3>
+              <p className="text-gray-600">Fully qualified and registered to work safely on all gas appliances.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="mb-4 p-4 bg-brand-blue rounded-lg w-fit mx-auto">
+                <Award className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Over 10 Years Experience</h3>
+              <p className="text-gray-600">Providing Hertfordshire with reliable and affordable service.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="mb-4 p-4 bg-brand-blue rounded-lg w-fit mx-auto">
+                <Users className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Local & Trusted</h3>
+              <p className="text-gray-600">Serving Hitchin, Stevenage, Letchworth and surrounding areas.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -204,11 +194,11 @@ export default function Home() {
       <section className="section-padding bg-gradient-to-br from-brand-orange to-orange-700">
         <div className="section-container text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Need an Emergency Plumber?
+            Need a Professional Plumber?
           </h2>
           <p className="text-lg text-orange-100 mb-8 max-w-2xl mx-auto">
-            We're available 24/7 for emergency callouts. Don't wait - 
-            get in touch now for immediate assistance.
+            Get in touch today for a free quote on any plumbing or heating work. 
+            We offer competitive prices and quality workmanship.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -216,7 +206,7 @@ export default function Home() {
               className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-orange rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               <Phone className="h-5 w-5" />
-              Call Now: 07990 806810
+              Call: 07990 806810
             </a>
             <Link
               href="/contact"

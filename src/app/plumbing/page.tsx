@@ -124,14 +124,14 @@ export default function PlumbingPage() {
       </section>
 
       {/* Common Problems */}
-      <section className="section-padding bg-gray-50">
+      <section className="py-8 sm:py-10 lg:py-12 xl:py-14 bg-gray-50 relative">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Common Plumbing Problems We Fix
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-600 mb-6">
                 Don't let plumbing problems disrupt your day. We're experienced in 
                 diagnosing and fixing all types of plumbing issues quickly and efficiently.
               </p>
@@ -143,7 +143,7 @@ export default function PlumbingPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-8">
+              <div className="mt-6">
                 <a
                   href="tel:07990806810"
                   className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg font-semibold"

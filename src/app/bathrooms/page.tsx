@@ -27,87 +27,52 @@ const services = [
   },
 ]
 
-const bathroomFeatures = [
+const bathroomServices = [
   'Shower & power showers',
-  'Baths & luxury spa baths',
-  'Sinks & vanity units',
-  'Toilets & bidets',
-  'Bath resurfacing',
-  'Underfloor heating',
+  'Bath installation & replacement',
+  'Toilet & basin fitting',
+  'Tiling - walls and floors',
   'Heated towel rails',
-  'Hot water cylinders',
-  'Wet rooms',
-  'Disability adaptations',
-  'En-suite installation',
-  'Cloakroom fitting',
-]
-
-const processSteps = [
-  {
-    step: '1',
-    title: 'Free Consultation',
-    description: 'We visit your home to discuss your ideas and take measurements.',
-  },
-  {
-    step: '2',
-    title: 'Design & Quote',
-    description: 'Receive a detailed design plan and transparent pricing.',
-  },
-  {
-    step: '3',
-    title: 'Installation',
-    description: 'Our expert team completes your bathroom transformation.',
-  },
-  {
-    step: '4',
-    title: 'Final Inspection',
-    description: 'We ensure everything is perfect and you\'re 100% satisfied.',
-  },
+  'Underfloor heating',
+  'Bathroom radiators',
+  'Complete renovations',
+  'Bathroom design service',
 ]
 
 export default function BathroomsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center bg-gray-900">
+      <section className="relative min-h-[50vh] lg:min-h-[60vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/plumbingTap.jpg"
+            src="/images/plumbingpicNew.jpg"
             alt="Professional Bathroom Installation"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 section-container py-16 sm:py-20 xl:py-24">
-          <div className="flex flex-col lg:flex-row gap-12 items-center justify-between">
-            <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
-              <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-6 xl:mb-8">
-                Professional Bathroom Installation in{' '}
-                <span className="text-brand-orange">Hertfordshire</span>
-              </h1>
-              <p className="text-lg md:text-xl xl:text-2xl text-gray-200 mb-8 xl:mb-10">
-                Transform your bathroom with our complete fitting service. From luxury suites 
-                to practical wet rooms, we bring your dream bathroom to life.
-              </p>
-              <div className="mt-6 flex items-center gap-4 text-sm">
-                <div className="flex items-center gap-1 text-brand-orange">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <span className="text-gray-200">5-star rated bathroom installations</span>
-              </div>
-            </div>
-            <div className="flex-shrink-0">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+        <div className="relative z-10 section-container py-12 sm:py-16 lg:py-20">
+          <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
+            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-4">
+              TRANSFORM YOUR BATHROOM
+            </h1>
+            <p className="text-xl md:text-2xl text-brand-orange mb-4">
+              PROFESSIONAL INSTALLATION FROM DESIGN TO COMPLETION.
+            </p>
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
+              Whether you're looking for a simple refresh or a complete renovation, our experienced team delivers quality bathroom installations that combine style with functionality.
+            </p>
+            <div className="flex items-center gap-4 mt-8">
+              <div className="bg-white/90 p-3 rounded-md shadow-lg">
                 <Image
                   src="/images/1logos.png"
                   alt="Gas Safe Registered"
-                  width={150}
-                  height={100}
-                  className="h-auto w-full max-w-[150px]"
+                  width={140}
+                  height={90}
+                  className="h-auto w-[140px]"
                 />
               </div>
             </div>
@@ -119,93 +84,79 @@ export default function BathroomsPage() {
       <section className="section-padding">
         <div className="section-container">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            Complete Bathroom Services
+            BATHROOM SERVICES
           </h2>
           <p className="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-            We handle every aspect of your bathroom project, from initial design 
-            to the final finishing touches.
+            From modern shower rooms to traditional bathroom suites, we provide complete 
+            bathroom installation services tailored to your needs.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service) => (
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {services.map((service, index) => (
               <div
                 key={service.title}
-                className={`card ${service.highlight ? 'border-brand-blue' : ''}`}
+                className="card-service card-hover-lift group h-full"
               >
-                <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg ${
-                    service.highlight ? 'bg-brand-blue/10' : 'bg-gray-100'
-                  }`}>
-                    <service.icon className={`h-6 w-6 ${
-                      service.highlight ? 'text-brand-blue' : 'text-gray-600'
-                    }`} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
+                <div className={`mb-4 p-3 rounded-lg w-fit group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 ${
+                  service.highlight ? 'bg-brand-orange' : 'bg-brand-blue'
+                }`}>
+                  <service.icon className="h-8 w-8 text-white" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 group-hover:text-gray-700 transition-colors">{service.description}</p>
               </div>
             ))}
+          </div>
+          
+          <div className="mt-12 text-center max-w-3xl mx-auto">
+            <p className="text-gray-600 text-lg italic">
+              We treat every home we work in with the same care and attention we would show our own homes, making sure that any mess is fully cleared up once we've finished.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="section-padding bg-gray-50">
+      {/* Common Problems */}
+      <section className="py-8 sm:py-10 lg:py-12 xl:py-14 bg-gray-50 relative">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Everything You Need for Your Dream Bathroom
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Complete Bathroom Solutions
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                With over 20 years of experience, we've installed hundreds of bathrooms 
-                across Hertfordshire. No job is too big or small.
+              <p className="text-lg text-gray-600 mb-6">
+                Create your dream bathroom with our comprehensive installation services. 
+                From initial design to final finishing touches, we handle everything.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
-                {bathroomFeatures.map((feature) => (
-                  <div key={feature} className="flex items-center gap-2">
+                {bathroomServices.map((service) => (
+                  <div key={service} className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-brand-blue flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-gray-700">{service}</span>
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="relative overflow-hidden rounded-lg shadow-lg bg-gray-100">
-              <div className="relative h-[400px] md:h-[500px]">
-                <Image
-                  src="/images/plumbingTap.jpg"
-                  alt="Professional Bathroom Installation"
-                  fill
-                  className="object-cover"
-                  style={{ objectPosition: 'center 40%' }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+              <div className="mt-6">
+                <a
+                  href="tel:07990806810"
+                  className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg font-semibold"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call for Immediate Help
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Steps */}
-      <section className="section-padding">
-        <div className="section-container">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-            Our Simple 4-Step Process
-          </h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={step.step} className="text-center relative">
-                <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                  {step.step}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
-              </div>
-            ))}
+            <div className="relative">
+              <Image
+                src="/images/plumbingTap.jpg"
+                alt="Professional Bathroom Services"
+                width={500}
+                height={400}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>

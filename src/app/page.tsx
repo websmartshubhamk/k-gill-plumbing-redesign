@@ -111,7 +111,7 @@ export default function Home() {
       <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-700 mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Professional Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

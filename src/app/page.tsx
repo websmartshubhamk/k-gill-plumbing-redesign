@@ -61,27 +61,25 @@ export default function Home() {
         
         {/* Hero Content */}
         <div className="section-container relative z-10 py-20 sm:py-24 lg:py-32 xl:py-36">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-2xl xl:max-w-3xl 2xl:max-w-4xl animate-slide-in-left text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 xl:mb-8 leading-tight">
-                K. GILL PLUMBING & HEATING
-              </h1>
-              <p className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-brand-orange mb-4">
-                EXPERTISE YOU CAN TRUST
-              </p>
-              <p className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl text-gray-200 mb-6 sm:mb-8 xl:mb-10">
-                Honest, Affordable & Experienced<br />
-                Clear Solutions for your Plumbing & Heating
-              </p>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+          <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 xl:mb-8 leading-tight">
+              K. GILL PLUMBING & HEATING
+            </h1>
+            <p className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-brand-orange mb-4">
+              EXPERTISE YOU CAN TRUST
+            </p>
+            <p className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl text-gray-200 mb-8">
+              Honest, Affordable & Experienced<br />
+              Clear Solutions for your Plumbing & Heating
+            </p>
+            <div className="flex items-center gap-4 mt-8">
+              <div className="bg-white/90 p-3 rounded-md shadow-lg">
                 <Image
                   src="/images/1logos.png"
                   alt="Gas Safe Registered"
-                  width={180}
-                  height={120}
-                  className="h-auto w-full max-w-[180px]"
+                  width={140}
+                  height={90}
+                  className="h-auto w-[140px]"
                 />
               </div>
             </div>

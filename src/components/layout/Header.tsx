@@ -49,7 +49,7 @@ export default function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? 'py-2' : 'py-4'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-8">
         <div className={`bg-white/95 backdrop-blur-lg shadow-2xl hover:shadow-3xl rounded-full border border-gray-200/50 transition-all duration-300 ${
           scrolled ? 'py-2 px-4 sm:px-6' : 'py-3 px-6 sm:px-8'
         }`}>
@@ -123,7 +123,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+        <div className="px-4 sm:px-6 lg:px-8 mt-4">
           <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border border-gray-100 overflow-hidden animate-slide-down">
           <div className="px-6 py-6 space-y-3">
             {navigation.map((item) => {

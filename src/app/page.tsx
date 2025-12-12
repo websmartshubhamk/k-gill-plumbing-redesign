@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Team Photo */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[40vh] lg:min-h-[45vh] flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
         
         {/* Hero Content */}
-        <div className="section-container relative z-10 py-20 sm:py-24 lg:py-32 xl:py-36">
+        <div className="section-container relative z-10 py-8 sm:py-10 lg:py-12">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 xl:mb-8 leading-tight">
               K. GILL PLUMBING & HEATING

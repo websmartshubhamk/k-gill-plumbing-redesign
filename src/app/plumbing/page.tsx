@@ -43,7 +43,7 @@ export default function PlumbingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] lg:min-h-[60vh] flex items-center bg-gray-900">
+      <section className="relative min-h-[40vh] lg:min-h-[45vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/Plumbing4.jpg"
@@ -54,7 +54,7 @@ export default function PlumbingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 section-container py-12 sm:py-16 lg:py-20">
+        <div className="relative z-10 section-container py-8 sm:py-10 lg:py-12">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-4">
               DRIPPING TAP OR A BURST PIPE CAUSING YOU TROUBLE?

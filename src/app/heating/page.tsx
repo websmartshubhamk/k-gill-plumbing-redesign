@@ -54,7 +54,8 @@ export default function HeatingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 section-container py-8 sm:py-10 lg:py-12">
+        <div className="relative z-10 w-full py-8 sm:py-10 lg:py-12">
+          <div className="section-container">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-4">
               DON'T GET LEFT IN THE COLD
@@ -76,6 +77,7 @@ export default function HeatingPage() {
                 />
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>

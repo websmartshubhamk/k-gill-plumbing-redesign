@@ -28,14 +28,15 @@ export default function InteractiveServiceMap() {
   const [selectedLocation, setSelectedLocation] = useState<Location>(serviceLocations[0])
   const [hoveredLocation, setHoveredLocation] = useState<string | null>(null)
   const locationListRef = useRef<HTMLDivElement>(null)
-  const [mapHeight, setMapHeight] = useState('400px')
+  const [mapHeight, setMapHeight] = useState('300px')
 
   // Update map height to match location list height
   useEffect(() => {
     const updateMapHeight = () => {
       if (locationListRef.current) {
         const height = locationListRef.current.offsetHeight
-        setMapHeight(`${height}px`)
+        // Set map height to match location list but cap at a reasonable max
+        setMapHeight(`${Math.min(height, 500)}px`)
       }
     }
 
@@ -59,23 +60,20 @@ export default function InteractiveServiceMap() {
         <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-stretch">
           {/* Location List */}
           <div ref={locationListRef} className="order-2 lg:order-1">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 xl:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-2 xl:gap-3">
               {serviceLocations.map((location) => (
                 <button
                   key={location.name}
                   onClick={() => setSelectedLocation(location)}
                   onMouseEnter={() => setHoveredLocation(location.name)}
                   onMouseLeave={() => setHoveredLocation(null)}
-                  className={`text-center p-4 rounded-lg transition-all duration-300 cursor-pointer group ${
+                  className={`text-center py-3 px-4 rounded-lg transition-all duration-300 cursor-pointer ${
                     selectedLocation.name === location.name
-                      ? 'bg-brand-blue text-white shadow-lg scale-105'
+                      ? 'bg-brand-blue text-white shadow-lg'
                       : 'bg-gray-50 hover:bg-brand-blue hover:text-white hover:shadow-md'
                   }`}
                 >
-                  <div className="font-semibold">{location.name}</div>
-                  {location.description && selectedLocation.name === location.name && (
-                    <div className="text-xs mt-1 opacity-90">{location.description}</div>
-                  )}
+                  <div className="font-semibold text-sm lg:text-base">{location.name}</div>
                 </button>
               ))}
             </div>
@@ -83,9 +81,9 @@ export default function InteractiveServiceMap() {
 
           {/* Interactive Map */}
           <div className="order-1 lg:order-2">
-            <div className="bg-white rounded-xl shadow-xl p-6 relative">
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden">
               {/* Map Container */}
-              <div className="relative rounded-lg overflow-hidden" style={{ height: mapHeight, minHeight: '400px' }}>
+              <div className="relative" style={{ height: mapHeight }}>
                 {/* Google Maps Embed - No API key required */}
                 <iframe
                   src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.72810619872!2d-0.3817765050863085!3d51.89730680362813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876366c7c5cba1f%3A0xf82e17b8a6e30ad0!2s${selectedLocation.name}%2C%20UK!5e0!3m2!1sen!2suk!4v1702472896524!5m2!1sen!2suk`}
@@ -97,25 +95,22 @@ export default function InteractiveServiceMap() {
                   title="K Gill Plumbing Service Areas Map"
                 />
               </div>
-
-              {/* Selected Location Info - Bottom aligned */}
-              <div className="mt-6 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  {selectedLocation.name}
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  {selectedLocation.description || 'Professional plumbing and heating services available'}
-                </p>
-                <a
-                  href="tel:07990806810"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-blue text-white rounded-lg font-semibold hover:bg-brand-blue-dark transition-colors"
-                >
-                  <Phone className="h-5 w-5" />
-                  Check Coverage
-                </a>
-              </div>
             </div>
           </div>
+        </div>
+
+        {/* Selected Location Info - Mobile and below map */}
+        <div className="mt-6 lg:hidden text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">
+            Currently viewing: {selectedLocation.name}
+          </h3>
+          <a
+            href="tel:07990806810"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue text-white rounded-lg font-semibold hover:bg-brand-blue-dark transition-colors"
+          >
+            <Phone className="h-4 w-4" />
+            Call Us
+          </a>
         </div>
 
         {/* Additional Info - Bottom aligned */}

@@ -19,15 +19,15 @@ import GlobalCTA from '@/components/sections/GlobalCTA'
 
 const services = [
   {
-    title: 'Plumbing Services',
-    description: 'From repairs to installations, we handle all your plumbing needs with expertise.',
+    title: 'PLUMBING',
+    description: 'Our knowledgeable and friendly team are trained to provide you with a wide array of plumbing services. Whatever your problem, we have a solution.',
     icon: Wrench,
     href: '/plumbing',
     features: ['Leak repairs', 'Pipe installation', 'Drain unblocking', 'Tap replacement']
   },
   {
-    title: 'Heating & Boilers',
-    description: 'Keep your home warm with our comprehensive heating and boiler services.',
+    title: 'HEATING & BOILER REPAIR',
+    description: "Heating causing you trouble? Don't get left in the cold, call K.Gill Plumbing & Heating for a professional and reliable call out service.",
     icon: Flame,
     href: '/heating',
     features: ['Boiler servicing', 'Central heating', 'Radiator installation', 'Gas safety checks']
@@ -64,8 +64,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="max-w-2xl xl:max-w-3xl 2xl:max-w-4xl animate-slide-in-left text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 xl:mb-8 leading-tight">
-                Expert Plumbing & Heating Services in{' '}
-                <span className="text-brand-orange">Hertfordshire</span>
+                K. GILL PLUMBING & HEATING
               </h1>
               <p className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-brand-orange mb-4">
                 EXPERTISE YOU CAN TRUST
@@ -143,11 +142,17 @@ export default function Home() {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              About K Gill Plumbing & Heating
+              WELCOME<br />
+              <span className="text-brand-blue">WE'RE HERE TO HELP YOU OUT.</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Over 10 years of trusted service providing honest, affordable, and experienced 
-              solutions for all your plumbing and heating needs.
+              At K.Gill Plumbing & Heating, we have been providing Hertfordshire with a reliable and affordable service for over 10 years. From dripping taps to full bathroom suite installations, you can rest assured that you will get a professional job at an unbeatable price
+            </p>
+            <p className="text-base text-gray-600 mt-4">
+              Services in and around Hitchin, Letchworth & Stevenage
+            </p>
+            <p className="text-sm text-gray-500 mt-2 uppercase tracking-wide">
+              We undertake a wide range of domestic plumbing services including repairs, installations and servicing
             </p>
           </div>
 

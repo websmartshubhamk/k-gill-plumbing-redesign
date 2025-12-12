@@ -5,6 +5,13 @@ import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const testimonials = [
   {
+    name: 'Sam & Matt',
+    location: 'Hitchin',
+    rating: 5,
+    text: 'What a great experience! They called to let us know that they were running a bit late due to a previous job, and when they arrived the job was done quickly and professionally. Couldn\'t be happier.',
+    service: 'Plumbing Services',
+  },
+  {
     name: 'Sarah Johnson',
     location: 'Hitchin',
     rating: 5,

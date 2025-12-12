@@ -1,4 +1,4 @@
-import { Phone, Wrench, Flame, Bath, Award, CheckCircle2, Users } from 'lucide-react'
+import { Phone, Wrench, Flame, Bath, Award, CheckCircle2, Users, Clock, Search, Settings, CheckCircle } from 'lucide-react'
 
 // WhatsApp Icon
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -41,6 +41,36 @@ const services = [
   }
 ]
 
+const processSteps = [
+  {
+    title: '1. Contact Us',
+    description: 'Call or message us for immediate response',
+    detail: 'Available 24/7 for emergencies',
+    icon: Phone,
+    color: 'bg-brand-blue'
+  },
+  {
+    title: '2. Quick Assessment',
+    description: 'We diagnose the problem efficiently',
+    detail: 'Expert evaluation on-site',
+    icon: Search,
+    color: 'bg-brand-orange'
+  },
+  {
+    title: '3. Professional Repair',
+    description: 'Quality workmanship with guaranteed results',
+    detail: 'Using professional tools & parts',
+    icon: Settings,
+    color: 'bg-brand-blue'
+  },
+  {
+    title: '4. Job Complete',
+    description: 'Clean finish with full satisfaction',
+    detail: 'Warranty included on all work',
+    icon: CheckCircle,
+    color: 'bg-green-600'
+  }
+]
 
 export default function Home() {
   return (
@@ -137,23 +167,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* How It Works Process Section */}
+      <section className="section-padding bg-white">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              WELCOME<br />
-              <span className="text-brand-blue">WE'RE HERE TO HELP YOU OUT.</span>
+              How It Works
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              At K.Gill Plumbing & Heating, we have been providing Hertfordshire with a reliable and affordable service for over 10 years. From dripping taps to full bathroom suite installations, you can rest assured that you will get a professional job at an unbeatable price
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From your first call to job completion, our streamlined process ensures 
+              fast, reliable, and professional service every time.
             </p>
-            <p className="text-base text-gray-600 mt-4">
-              Services in and around Hitchin, Letchworth & Stevenage
-            </p>
-            <p className="text-sm text-gray-500 mt-2 uppercase tracking-wide">
-              We undertake a wide range of domestic plumbing services including repairs, installations and servicing
-            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {processSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full flex flex-col"
+              >
+                {/* Icon */}
+                <div className={`w-16 h-16 ${step.color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                  <step.icon className="w-8 h-8 text-white" />
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {step.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-gray-600 mb-4 flex-grow">
+                  {step.description}
+                </p>
+                
+                {/* Detail with Icon */}
+                <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <span>{step.detail}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="section-padding bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="section-container">
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center mb-12">
+            {/* Text Content */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                WELCOME<br />
+                <span className="text-brand-blue">WE'RE HERE TO HELP YOU OUT.</span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-4">
+                At K.Gill Plumbing & Heating, we have been providing Hertfordshire with a reliable and affordable service for over 10 years. From dripping taps to full bathroom suite installations, you can rest assured that you will get a professional job at an unbeatable price
+              </p>
+              <p className="text-base text-gray-600 mb-4">
+                Services in and around Hitchin, Letchworth & Stevenage
+              </p>
+              <p className="text-sm text-gray-500 uppercase tracking-wide">
+                We undertake a wide range of domestic plumbing services including repairs, installations and servicing
+              </p>
+            </div>
+            
+            {/* Image */}
+            <div className="relative">
+              <Image
+                src="/images/team-with-van.jpg"
+                alt="K Gill Plumbing & Heating Professional Team"
+                width={600}
+                height={400}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 xl:grid-cols-3 gap-8 xl:gap-12 2xl:gap-16">

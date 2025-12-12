@@ -73,17 +73,19 @@ export default function HeatingPage() {
             <p className="text-xl md:text-2xl xl:text-3xl text-brand-orange mb-4">
               CALL US FOR A PROFESSIONAL & RELIABLE SERVICE.
             </p>
-            <p className="text-lg md:text-xl xl:text-2xl text-gray-200 mb-8 xl:mb-10">
+            <p className="text-lg md:text-xl xl:text-2xl text-gray-200 mb-8">
               We understand how much of an inconvenience it is to you when your heating breaks down, which is why we offer a swift response.
             </p>
-            <div className="mt-6">
-              <Image
-                src="/images/1logos.png"
-                alt="Gas Safe Registered"
-                width={120}
-                height={80}
-                className="h-auto max-w-[120px]"
-              />
+            <div className="flex items-center gap-4 mt-8">
+              <div className="bg-white/90 p-3 rounded-md shadow-lg">
+                <Image
+                  src="/images/1logos.png"
+                  alt="Gas Safe Registered"
+                  width={140}
+                  height={90}
+                  className="h-auto w-[140px]"
+                />
+              </div>
             </div>
           </div>
         </div>

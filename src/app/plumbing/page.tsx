@@ -55,29 +55,25 @@ export default function PlumbingPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
         <div className="relative z-10 section-container py-12 sm:py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-[1fr,auto] gap-8 items-center">
-              <div className="max-w-3xl">
-                <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-4">
-                  DRIPPING TAP OR A BURST PIPE CAUSING YOU TROUBLE?
-                </h1>
-                <p className="text-xl md:text-2xl text-brand-orange mb-4">
-                  OUR QUALIFIED TEAM ARE ON HAND TO PROVIDE SPEEDY REPAIRS.
-                </p>
-                <p className="text-lg md:text-xl text-gray-200">
-                  Whether you need a dripping tap fixed or a full bathroom installed, our experienced and fully-trained Plumbers can provide you with a quality, long lasting solution - which won't break the bank.
-                </p>
-              </div>
-              <div className="flex lg:justify-end">
-                <div className="bg-white/95 p-4 rounded-lg shadow-xl">
-                  <Image
-                    src="/images/1logos.png"
-                    alt="Gas Safe Registered"
-                    width={120}
-                    height={80}
-                    className="h-auto w-[120px]"
-                  />
-                </div>
+          <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
+            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-4">
+              DRIPPING TAP OR A BURST PIPE CAUSING YOU TROUBLE?
+            </h1>
+            <p className="text-xl md:text-2xl text-brand-orange mb-4">
+              OUR QUALIFIED TEAM ARE ON HAND TO PROVIDE SPEEDY REPAIRS.
+            </p>
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
+              Whether you need a dripping tap fixed or a full bathroom installed, our experienced and fully-trained Plumbers can provide you with a quality, long lasting solution - which won't break the bank.
+            </p>
+            <div className="flex items-center gap-4 mt-8">
+              <div className="bg-white/90 p-3 rounded-md shadow-lg">
+                <Image
+                  src="/images/1logos.png"
+                  alt="Gas Safe Registered"
+                  width={140}
+                  height={90}
+                  className="h-auto w-[140px]"
+                />
               </div>
             </div>
           </div>

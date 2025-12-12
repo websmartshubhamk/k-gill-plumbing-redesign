@@ -42,38 +42,40 @@ export default function PlumbingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center bg-gray-900">
+      <section className="relative min-h-[50vh] lg:min-h-[60vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/Plumbing4.jpg"
             alt="Professional Plumbing Services"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 section-container py-16 sm:py-20 xl:py-24">
-          <div className="flex flex-col lg:flex-row gap-12 items-center justify-between">
-            <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
-              <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-6 xl:mb-8">
-                Professional Plumbing Services in{' '}
-                <span className="text-brand-orange">Hertfordshire</span>
-              </h1>
-              <p className="text-lg md:text-xl xl:text-2xl text-gray-200 mb-8 xl:mb-10">
-                From emergency repairs to new installations, K Gill Plumbing provides 
-                reliable, professional plumbing services across Hitchin, Stevenage, and Letchworth.
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <Image
-                  src="/images/1logos.png"
-                  alt="Gas Safe Registered"
-                  width={150}
-                  height={100}
-                  className="h-auto w-full max-w-[150px]"
-                />
+        <div className="relative z-10 section-container py-12 sm:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-[1fr,auto] gap-8 items-center">
+              <div className="max-w-3xl">
+                <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-4">
+                  Professional Plumbing Services in{' '}
+                  <span className="text-brand-orange">Hertfordshire</span>
+                </h1>
+                <p className="text-lg md:text-xl text-gray-200">
+                  From emergency repairs to new installations, K Gill Plumbing provides 
+                  reliable, professional plumbing services across Hitchin, Stevenage, and Letchworth.
+                </p>
+              </div>
+              <div className="flex lg:justify-end">
+                <div className="bg-white/95 p-4 rounded-lg shadow-xl">
+                  <Image
+                    src="/images/1logos.png"
+                    alt="Gas Safe Registered"
+                    width={120}
+                    height={80}
+                    className="h-auto w-[120px]"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -91,32 +93,26 @@ export default function PlumbingPage() {
             water systems running smoothly.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service) => (
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {services.map((service, index) => (
               <div
                 key={service.title}
-                className={`card ${service.urgent ? 'border-emergency' : ''}`}
+                className="card-service card-hover-lift group h-full"
               >
-                <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg ${
-                    service.urgent ? 'bg-emergency/10' : 'bg-brand-blue/10'
-                  }`}>
-                    <service.icon className={`h-6 w-6 ${
-                      service.urgent ? 'text-emergency' : 'text-brand-blue'
-                    }`} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {service.title}
-                      {service.urgent && (
-                        <span className="ml-2 text-sm text-emergency font-normal">
-                          24/7 Available
-                        </span>
-                      )}
-                    </h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
+                <div className={`mb-4 p-3 rounded-lg w-fit group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 ${
+                  service.urgent ? 'bg-emergency' : 'bg-brand-blue'
+                }`}>
+                  <service.icon className="h-8 w-8 text-white" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors">
+                  {service.title}
+                  {service.urgent && (
+                    <span className="ml-2 text-sm text-emergency font-normal">
+                      24/7 Available
+                    </span>
+                  )}
+                </h3>
+                <p className="text-gray-600 group-hover:text-gray-700 transition-colors">{service.description}</p>
               </div>
             ))}
           </div>

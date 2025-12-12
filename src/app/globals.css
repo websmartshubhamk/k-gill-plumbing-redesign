@@ -52,6 +52,10 @@
     @apply card hover:border-brand-blue/20 hover:shadow-brand-blue/10;
   }
 
+  .card-hover-lift {
+    @apply hover:-translate-y-1 transition-transform duration-300;
+  }
+
   /* Form Elements */
   .input-field {
     @apply w-full px-4 py-2 border border-gray-300 rounded-md 

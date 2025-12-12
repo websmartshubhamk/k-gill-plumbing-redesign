@@ -86,10 +86,15 @@ export default function InteractiveServiceMap() {
             <div className="bg-white rounded-xl shadow-xl p-6 relative">
               {/* Map Container */}
               <div className="relative rounded-lg overflow-hidden" style={{ height: mapHeight, minHeight: '400px' }}>
-                <img 
-                  src="/images/hertfordshire-map.svg"
-                  alt="Hertfordshire Service Area Map"
-                  className="w-full h-full object-contain bg-gray-50"
+                {/* Google Maps Embed - No API key required */}
+                <iframe
+                  src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.72810619872!2d-0.3817765050863085!3d51.89730680362813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876366c7c5cba1f%3A0xf82e17b8a6e30ad0!2s${selectedLocation.name}%2C%20UK!5e0!3m2!1sen!2suk!4v1702472896524!5m2!1sen!2suk`}
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="K Gill Plumbing Service Areas Map"
                 />
               </div>
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { MapPin, Phone } from 'lucide-react'
 
 interface Location {
@@ -24,187 +24,14 @@ const serviceLocations: Location[] = [
   { name: 'Hatfield', coordinates: { lat: 51.7645, lng: -0.2284 } },
 ]
 
-// Declare the google maps types
-declare global {
-  interface Window {
-    google: any
-    initMap: () => void
-  }
-}
-
 export default function InteractiveServiceMap() {
   const [selectedLocation, setSelectedLocation] = useState<Location>(serviceLocations[0])
   const [hoveredLocation, setHoveredLocation] = useState<string | null>(null)
-  const [mapLoaded, setMapLoaded] = useState(false)
-  const [mapError, setMapError] = useState(false)
-  
-  const mapRef = useRef<HTMLDivElement>(null)
-  const googleMapRef = useRef<any>(null)
-  const markersRef = useRef<any[]>([])
-  const infoWindowRef = useRef<any>(null)
-  const locationListRef = useRef<HTMLDivElement>(null)
 
-  // Load Google Maps script
-  useEffect(() => {
-    const loadGoogleMaps = () => {
-      // Check if already loaded
-      if (window.google && window.google.maps) {
-        setMapLoaded(true)
-        return
-      }
-
-      // Check if script is already being loaded
-      const existingScript = document.querySelector('script[src*="maps.googleapis.com"]')
-      if (existingScript) {
-        existingScript.addEventListener('load', () => setMapLoaded(true))
-        existingScript.addEventListener('error', () => setMapError(true))
-        return
-      }
-
-      // Create and load the script
-      const script = document.createElement('script')
-      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-      
-      if (!apiKey) {
-        console.warn('Google Maps API key not found. Using fallback static map.')
-        setMapError(true)
-        return
-      }
-      
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`
-      script.async = true
-      script.defer = true
-      
-      window.initMap = () => {
-        setMapLoaded(true)
-      }
-
-      script.addEventListener('error', () => {
-        console.error('Failed to load Google Maps')
-        setMapError(true)
-      })
-
-      document.head.appendChild(script)
-    }
-
-    loadGoogleMaps()
-  }, [])
-
-  // Initialize map when loaded
-  useEffect(() => {
-    if (!mapLoaded || !mapRef.current || mapError) return
-
-    try {
-      // Calculate center of all locations
-      const avgLat = serviceLocations.reduce((sum, loc) => sum + loc.coordinates.lat, 0) / serviceLocations.length
-      const avgLng = serviceLocations.reduce((sum, loc) => sum + loc.coordinates.lng, 0) / serviceLocations.length
-
-      // Create map
-      googleMapRef.current = new window.google.maps.Map(mapRef.current, {
-        center: { lat: avgLat, lng: avgLng },
-        zoom: 10,
-        styles: [
-          {
-            featureType: 'all',
-            elementType: 'geometry',
-            stylers: [{ color: '#f5f5f5' }]
-          },
-          {
-            featureType: 'water',
-            elementType: 'geometry',
-            stylers: [{ color: '#c9c9c9' }]
-          },
-          {
-            featureType: 'water',
-            elementType: 'labels.text.fill',
-            stylers: [{ color: '#9e9e9e' }]
-          }
-        ],
-        mapTypeControl: false,
-        fullscreenControl: false,
-        streetViewControl: false
-      })
-
-      // Create info window
-      infoWindowRef.current = new window.google.maps.InfoWindow()
-
-      // Create markers
-      serviceLocations.forEach((location) => {
-        const marker = new window.google.maps.Marker({
-          position: location.coordinates,
-          map: googleMapRef.current,
-          title: location.name,
-          icon: {
-            url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="${location.name === selectedLocation.name ? '#1e40af' : '#ef4444'}"/>
-              </svg>
-            `),
-            scaledSize: new window.google.maps.Size(32, 32),
-            anchor: new window.google.maps.Point(16, 32)
-          }
-        })
-
-        marker.addListener('click', () => {
-          setSelectedLocation(location)
-          
-          const content = `
-            <div style="padding: 8px;">
-              <h3 style="font-weight: bold; margin-bottom: 4px;">${location.name}</h3>
-              <p style="color: #666; font-size: 14px;">${location.description || 'Professional plumbing and heating services available'}</p>
-            </div>
-          `
-          
-          infoWindowRef.current.setContent(content)
-          infoWindowRef.current.open(googleMapRef.current, marker)
-        })
-
-        markersRef.current.push({ marker, location })
-      })
-    } catch (error) {
-      console.error('Error initializing map:', error)
-      setMapError(true)
-    }
-  }, [mapLoaded, mapError])
-
-  // Update markers when selection changes
-  useEffect(() => {
-    if (!googleMapRef.current || !markersRef.current.length) return
-
-    markersRef.current.forEach(({ marker, location }) => {
-      const isSelected = location.name === selectedLocation.name
-      marker.setIcon({
-        url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="${isSelected ? '#1e40af' : '#ef4444'}"/>
-          </svg>
-        `),
-        scaledSize: new window.google.maps.Size(isSelected ? 40 : 32, isSelected ? 40 : 32),
-        anchor: new window.google.maps.Point(isSelected ? 20 : 16, isSelected ? 40 : 32)
-      })
-      
-      if (isSelected) {
-        marker.setAnimation(window.google.maps.Animation.BOUNCE)
-        setTimeout(() => marker.setAnimation(null), 2000)
-        
-        // Pan to selected location
-        googleMapRef.current.panTo(location.coordinates)
-      }
-    })
-  }, [selectedLocation])
-
-  // Calculate map height based on location list
-  const [mapHeight, setMapHeight] = useState('400px')
-  
-  useEffect(() => {
-    if (locationListRef.current) {
-      const listHeight = locationListRef.current.offsetHeight
-      setMapHeight(`${listHeight}px`)
-    }
-  }, [])
-
-  // Fallback static map
+  // Calculate the position of the pin on the map
   const getMapPosition = (location: Location) => {
+    // These values are approximate positions for the static map
+    // In a real implementation, you'd use a proper mapping library
     const mapBounds = {
       north: 52.1,
       south: 51.7,
@@ -230,9 +57,9 @@ export default function InteractiveServiceMap() {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-start">
           {/* Location List */}
-          <div ref={locationListRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 xl:gap-4 order-2 lg:order-1 content-start">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 xl:gap-4 order-2 lg:order-1">
             {serviceLocations.map((location) => (
               <button
                 key={location.name}
@@ -257,14 +84,9 @@ export default function InteractiveServiceMap() {
           <div className="order-1 lg:order-2">
             <div className="bg-white rounded-xl shadow-xl p-6 relative">
               {/* Map Container */}
-              <div 
-                ref={mapRef} 
-                className="relative bg-gray-100 rounded-lg overflow-hidden" 
-                style={{ height: mapHeight, minHeight: '400px' }}
-              >
-                {/* Show Google Map if available, otherwise show static fallback */}
-                {mapError && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100">
+              <div className="relative bg-gray-100 rounded-lg overflow-hidden" style={{ paddingBottom: '75%' }}>
+                {/* Placeholder for map - in production, this would be replaced with an actual map */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100">
                   {/* Enhanced SVG map representation */}
                   <svg 
                     className="w-full h-full" 

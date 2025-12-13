@@ -14,9 +14,9 @@ const config: Config = {
         // K Gill Brand Colors
         brand: {
           blue: {
-            light: "#3B82F6", // Blue-500
-            DEFAULT: "#1E40AF", // Blue-700
-            dark: "#1E3A8A", // Blue-800
+            light: "#1a4a8a", // Lighter variant
+            DEFAULT: "#092e5a", // Main brand blue
+            dark: "#061f3d", // Darker variant
           },
           orange: {
             light: "#F97316", // Orange-500

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const testimonials = [
@@ -72,6 +72,9 @@ const testimonials = [
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null)
   
   // Show 2 testimonials at a time on desktop, 1 on mobile
   const testimonialsPerView = 2
@@ -89,12 +92,50 @@ export default function Testimonials() {
   useEffect(() => {
     if (!isAutoPlaying) return
     
-    const interval = setInterval(nextSlide, 5000)
+    const interval = setInterval(nextSlide, 5000) // 5 seconds for auto-slide
     return () => clearInterval(interval)
   }, [isAutoPlaying, nextSlide])
 
   const handleMouseEnter = () => setIsAutoPlaying(false)
   const handleMouseLeave = () => setIsAutoPlaying(true)
+  
+  // Touch/Swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe && currentIndex < maxIndex) {
+      nextSlide()
+    }
+    if (isRightSwipe && currentIndex > 0) {
+      prevSlide()
+    }
+  }
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide()
+      } else if (e.key === 'ArrowRight') {
+        nextSlide()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [nextSlide, prevSlide])
 
   return (
     <section className="pt-16 md:pt-20 pb-0 bg-gradient-to-br from-gray-50 to-white">
@@ -110,11 +151,19 @@ export default function Testimonials() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div 
+          ref={containerRef}
+          className="relative" 
+          onMouseEnter={handleMouseEnter} 
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 hover:bg-white text-brand-blue p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-white text-brand-blue p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
             aria-label="Previous testimonials"
           >
             <ChevronLeft className="h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -122,7 +171,7 @@ export default function Testimonials() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 hover:bg-white text-brand-blue p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-white text-brand-blue p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
             aria-label="Next testimonials"
           >
             <ChevronRight className="h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -139,16 +188,22 @@ export default function Testimonials() {
                   key={index}
                   className="w-full md:w-1/2 flex-shrink-0 px-4"
                 >
-                  <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full">
-                    <div className="flex items-center gap-1 mb-3">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 h-full flex flex-col">
+                    {/* Five Stars at Top */}
+                    <div className="flex items-center gap-1 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
+                        <Star key={i} className="h-5 w-5 fill-brand-orange text-brand-orange" />
                       ))}
                     </div>
-                    <p className="text-gray-700 mb-4 italic leading-relaxed">{testimonial.text}</p>
-                    <div className="mt-auto">
-                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.location}</p>
+                    
+                    {/* Testimonial Text */}
+                    <p className="text-gray-700 mb-6 leading-relaxed flex-grow">{testimonial.text}</p>
+                    
+                    {/* Divider */}
+                    <div className="border-t border-gray-200 pt-4 mt-auto">
+                      {/* Bold Name + Muted Location */}
+                      <p className="font-bold text-gray-900">{testimonial.name}</p>
+                      <p className="text-sm text-gray-500">{testimonial.location}</p>
                     </div>
                   </div>
                 </div>
@@ -157,15 +212,15 @@ export default function Testimonials() {
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center mt-8 gap-2">
+          <div className="flex justify-center mt-8 gap-3">
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex 
-                    ? 'bg-brand-blue scale-110' 
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    ? 'bg-brand-blue w-8' 
+                    : 'bg-gray-300 hover:bg-gray-400 w-2'
                 }`}
                 aria-label={`Go to testimonial set ${index + 1}`}
               />

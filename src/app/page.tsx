@@ -80,8 +80,8 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/team-with-van.jpg"
-            alt="K Gill Plumbing Team"
+            src="/images/Home1.jpg"
+            alt="K Gill Plumbing & Heating Professional Services"
             fill
             className="object-cover object-center"
             priority

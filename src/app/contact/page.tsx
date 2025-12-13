@@ -292,26 +292,6 @@ function ContactForm() {
           </div>
         </div>
       </section>
-
-      {/* Emergency CTA */}
-      <section className="section-padding bg-emergency text-white">
-        <div className="section-container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Need Emergency Help?
-          </h2>
-          <p className="text-lg mb-6">
-            Don't wait! Call us now for immediate assistance with burst pipes, 
-            boiler breakdowns, or any plumbing emergency.
-          </p>
-          <a
-            href="tel:07990806810"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-emergency rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-          >
-            <Phone className="h-5 w-5 animate-pulse" />
-            Emergency: 07990 806810
-          </a>
-        </div>
-      </section>
     </>
   )
 }

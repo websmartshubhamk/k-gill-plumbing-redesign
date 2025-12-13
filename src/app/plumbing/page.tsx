@@ -234,7 +234,7 @@ export default function PlumbingPage() {
       {/* Common Problems */}
       <section className="py-8 sm:py-10 lg:py-12 xl:py-14 bg-gradient-to-br from-gray-50 to-gray-100 relative">
         <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-stretch">
             {/* Content Panel */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -271,14 +271,14 @@ export default function PlumbingPage() {
             </div>
             
             {/* Image Panel */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl p-4 shadow-lg">
+            <div className="relative flex">
+              <div className="bg-white rounded-2xl p-4 shadow-lg flex-1 flex flex-col">
                 <Image
                   src="/images/Home3.jpg"
                   alt="Professional Plumbing Services"
                   width={600}
                   height={480}
-                  className="w-full h-auto rounded-xl shadow-md"
+                  className="w-full h-full object-cover rounded-xl shadow-md flex-1"
                 />
               </div>
             </div>

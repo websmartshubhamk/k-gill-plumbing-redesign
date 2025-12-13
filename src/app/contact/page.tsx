@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, MessageSquare, Send } from 'lucide-react'
+import { Phone, Mail, AtSign, MapPin, Clock, MessageSquare, Send } from 'lucide-react'
 
 // WhatsApp Icon Component
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -127,7 +127,7 @@ function ContactForm() {
 
             <div className="card text-center">
               <div className="bg-brand-blue rounded-xl p-4 w-fit mx-auto mb-4 shadow-lg">
-                <Mail className="h-8 w-8 text-white fill-current" />
+                <AtSign className="h-8 w-8 text-white fill-current" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Email Us</h3>
               <a href="mailto:k.gill_plumbing@hotmail.co.uk" className="text-brand-blue hover:text-brand-blue-dark break-all">

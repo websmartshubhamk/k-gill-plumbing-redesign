@@ -79,7 +79,7 @@ export default function WhatsAppWidget() {
   return (
     <>
       {/* Floating Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-5 right-5 z-[9999]">
         {showTooltip && !isOpen && (
           <div className="absolute bottom-full right-0 mb-2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap animate-slide-up">
             <div className="font-semibold">Need help? Chat with us!</div>
@@ -110,7 +110,7 @@ export default function WhatsAppWidget() {
 
       {/* Chat Widget */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 bg-white rounded-lg shadow-2xl w-80 animate-slide-up">
+        <div className="fixed bottom-24 right-5 z-[9999] bg-white rounded-lg shadow-2xl max-w-[380px] w-full animate-slide-up">
           {/* Header */}
           <div className="bg-whatsapp text-white p-4 rounded-t-lg">
             <div className="flex items-center gap-3">

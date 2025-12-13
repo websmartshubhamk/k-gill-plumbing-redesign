@@ -76,7 +76,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Team Photo */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image

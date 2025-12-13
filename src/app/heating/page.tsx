@@ -43,7 +43,7 @@ export default function HeatingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] lg:min-h-[45vh] flex items-center bg-gray-900">
+      <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/heating_home.jpg"

@@ -1,4 +1,4 @@
-import { Phone, Bath, ShowerHead, Droplets, Palette, Ruler, CheckCircle, Star, Shield } from 'lucide-react'
+import { Phone, Bath, ShowerHead, Droplets, Palette, Ruler, CheckCircle, CheckCircle2, Star, Shield, MessageSquare, Calendar, Wrench } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import GlobalCTA from '@/components/sections/GlobalCTA'
@@ -39,11 +39,42 @@ const bathroomServices = [
   'Bathroom design service',
 ]
 
+const bathroomProcess = [
+  {
+    title: '1. Initial Consultation',
+    description: 'Free design consultation and quote',
+    detail: 'No obligation assessment',
+    icon: MessageSquare,
+    color: 'bg-brand-blue'
+  },
+  {
+    title: '2. Design & Planning',
+    description: 'Custom bathroom design to suit your needs',
+    detail: '3D visualisation available',
+    icon: Ruler,
+    color: 'bg-brand-orange'
+  },
+  {
+    title: '3. Professional Installation',
+    description: 'Expert fitting by qualified tradesmen',
+    detail: 'Fully insured work',
+    icon: Wrench,
+    color: 'bg-brand-blue'
+  },
+  {
+    title: '4. Final Inspection',
+    description: 'Complete quality check and handover',
+    detail: 'Satisfaction guaranteed',
+    icon: CheckCircle,
+    color: 'bg-green-600'
+  }
+]
+
 export default function BathroomsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] lg:min-h-[45vh] flex items-center bg-gray-900">
+      <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center bg-gray-900">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/plumbingpicNew.jpg"
@@ -116,6 +147,51 @@ export default function BathroomsPage() {
             <p className="text-gray-600 text-lg italic">
               We treat every home we work in with the same care and attention we would show our own homes, making sure that any mess is fully cleared up once we've finished.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Bathroom Installation Process */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Bathroom Installation Process
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From initial consultation to your dream bathroom, we guide you 
+              through every step with professional expertise.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {bathroomProcess.map((step, index) => (
+              <div
+                key={step.title}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full flex flex-col"
+              >
+                {/* Icon */}
+                <div className={`w-16 h-16 ${step.color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                  <step.icon className="w-8 h-8 text-white" />
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {step.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-gray-600 mb-4 flex-grow">
+                  {step.description}
+                </p>
+                
+                {/* Detail with Icon */}
+                <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <span>{step.detail}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

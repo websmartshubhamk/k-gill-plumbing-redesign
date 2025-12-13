@@ -1,4 +1,4 @@
-import { Phone, MessageSquare, Droplets, Wrench, Home, AlertTriangle, CheckCircle } from 'lucide-react'
+import { Phone, MessageSquare, Droplets, Wrench, Home, AlertTriangle, CheckCircle, Search, Settings, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import GlobalCTA from '@/components/sections/GlobalCTA'
@@ -37,6 +37,37 @@ const commonProblems = [
   'Hot & Cold Tanks',
   'Appliance Installation',
   'Bathrooms',
+]
+
+const plumbingProcess = [
+  {
+    title: '1. Emergency Call',
+    description: 'Call us for immediate plumbing response',
+    detail: 'Fast emergency response',
+    icon: Phone,
+    color: 'bg-brand-blue'
+  },
+  {
+    title: '2. Problem Assessment',
+    description: 'Quick diagnosis of your plumbing issue',
+    detail: 'Expert evaluation on-site',
+    icon: Search,
+    color: 'bg-brand-orange'
+  },
+  {
+    title: '3. Professional Repair',
+    description: 'Quality plumbing work with guaranteed results',
+    detail: 'Using professional tools & parts',
+    icon: Settings,
+    color: 'bg-brand-blue'
+  },
+  {
+    title: '4. Job Complete',
+    description: 'Clean finish with full satisfaction',
+    detail: 'Warranty included on all work',
+    icon: CheckCircle2,
+    color: 'bg-brand-orange'
+  }
 ]
 
 export default function PlumbingPage() {
@@ -121,6 +152,51 @@ export default function PlumbingPage() {
             <p className="text-gray-600 text-lg italic">
               We treat every home we work in with the same care and attention we would show our own homes, making sure that any mess is fully cleared up once we've finished.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Plumbing Process Section */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              How We Handle Your Plumbing Emergency
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From your emergency call to job completion, our streamlined process ensures 
+              fast, reliable, and professional plumbing service every time.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {plumbingProcess.map((step, index) => (
+              <div
+                key={step.title}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full flex flex-col"
+              >
+                {/* Icon */}
+                <div className={`w-16 h-16 ${step.color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                  <step.icon className="w-8 h-8 text-white" />
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {step.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-gray-600 mb-4 flex-grow">
+                  {step.description}
+                </p>
+                
+                {/* Detail with Icon */}
+                <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <span>{step.detail}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

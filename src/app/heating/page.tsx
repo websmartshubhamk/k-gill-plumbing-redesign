@@ -67,7 +67,8 @@ export default function HeatingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center bg-gray-900">
+      <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/heating_home.jpg"
@@ -78,16 +79,18 @@ export default function HeatingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
+        
+        {/* Hero Content */}
         <div className="relative z-10 w-full py-8 sm:py-10 lg:py-12">
           <div className="section-container">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
-            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               DON'T GET LEFT IN THE COLD
             </h1>
-            <p className="text-xl md:text-2xl text-brand-orange mb-4">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-brand-orange mb-4">
               CALL US FOR A PROFESSIONAL & RELIABLE SERVICE.
             </p>
-            <p className="text-lg md:text-xl text-gray-200 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8">
               We understand how much of an inconvenience it is to you when your heating breaks down, which is why we offer a swift response.
             </p>
             <div className="flex items-center gap-4 mt-8">

@@ -115,7 +115,9 @@ function ContactForm() {
         <div className="section-container">
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
             <div className="card text-center">
-              <Phone className="h-8 w-8 text-brand-blue mx-auto mb-4" />
+              <div className="bg-brand-blue rounded-xl p-4 w-fit mx-auto mb-4 shadow-lg">
+                <Phone className="h-8 w-8 text-white fill-current" />
+              </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Call Us</h3>
               <a href="tel:07990806810" className="text-brand-blue hover:text-brand-blue-dark font-semibold">
                 07990 806810
@@ -124,7 +126,9 @@ function ContactForm() {
             </div>
 
             <div className="card text-center">
-              <Mail className="h-8 w-8 text-brand-blue mx-auto mb-4" />
+              <div className="bg-brand-blue rounded-xl p-4 w-fit mx-auto mb-4 shadow-lg">
+                <Mail className="h-8 w-8 text-white fill-current" />
+              </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Email Us</h3>
               <a href="mailto:k.gill_plumbing@hotmail.co.uk" className="text-brand-blue hover:text-brand-blue-dark break-all">
                 k.gill_plumbing@hotmail.co.uk
@@ -133,7 +137,9 @@ function ContactForm() {
             </div>
 
             <div className="card text-center">
-              <WhatsAppIcon className="h-8 w-8 text-whatsapp mx-auto mb-4" />
+              <div className="bg-whatsapp rounded-xl p-4 w-fit mx-auto mb-4 shadow-lg">
+                <WhatsAppIcon className="h-8 w-8 text-white" />
+              </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">WhatsApp</h3>
               <a href="https://wa.me/447990806810" className="text-whatsapp hover:text-green-600 font-semibold">
                 Message on WhatsApp
@@ -252,9 +258,11 @@ function ContactForm() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Visit Our Office</h2>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-6 mb-8">
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-5 w-5 text-brand-blue flex-shrink-0 mt-1" />
+                  <div className="bg-brand-blue rounded-lg p-2 flex-shrink-0 mt-1">
+                    <MapPin className="h-5 w-5 text-white fill-current" />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
                     <p className="text-gray-600">
@@ -266,7 +274,9 @@ function ContactForm() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Clock className="h-5 w-5 text-brand-blue flex-shrink-0 mt-1" />
+                  <div className="bg-brand-blue rounded-lg p-2 flex-shrink-0 mt-1">
+                    <Clock className="h-5 w-5 text-white fill-current" />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
                     <p className="text-gray-600">

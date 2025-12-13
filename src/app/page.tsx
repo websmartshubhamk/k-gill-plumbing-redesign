@@ -93,12 +93,9 @@ export default function Home() {
         <div className="relative z-10 w-full pt-[80px] sm:pt-[84px] lg:pt-[88px]">
           <div className="section-container">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              K. GILL PLUMBING & HEATING
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-brand-orange mb-4">
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-brand-orange mb-4">
               EXPERTISE YOU CAN TRUST
-            </p>
+            </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8">
               Honest, Affordable & Experienced<br />
               Clear Solutions for your Plumbing & Heating

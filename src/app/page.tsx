@@ -68,7 +68,7 @@ const processSteps = [
     description: 'Clean finish with full satisfaction',
     detail: 'Warranty included on all work',
     icon: CheckCircle,
-    color: 'bg-green-600'
+    color: 'bg-brand-orange'
   }
 ]
 

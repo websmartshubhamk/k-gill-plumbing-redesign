@@ -66,7 +66,7 @@ const bathroomProcess = [
     description: 'Complete quality check and handover',
     detail: 'Satisfaction guaranteed',
     icon: CheckCircle,
-    color: 'bg-green-600'
+    color: 'bg-brand-orange'
   }
 ]
 

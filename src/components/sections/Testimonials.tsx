@@ -97,7 +97,7 @@ export default function Testimonials() {
   const handleMouseLeave = () => setIsAutoPlaying(true)
 
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <section className="pt-16 md:pt-20 pb-0 bg-gradient-to-br from-gray-50 to-white">
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

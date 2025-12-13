@@ -115,7 +115,7 @@ export default function PlumbingPage() {
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 w-full py-8 sm:py-10 lg:py-12">
+        <div className="relative z-10 w-full pt-[80px] pb-8 sm:pt-[84px] sm:pb-10 lg:pt-[88px] lg:pb-12">
           <div className="section-container">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">

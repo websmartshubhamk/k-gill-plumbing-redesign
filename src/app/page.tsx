@@ -216,8 +216,8 @@ export default function Home() {
             {/* Text Content */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                WELCOME<br />
-                <span className="text-brand-blue">WE'RE HERE TO HELP YOU OUT.</span>
+                Welcome<br />
+                <span className="text-brand-blue">We're here to help you out.</span>
               </h2>
               <p className="text-lg text-gray-600 mb-4">
                 At K.Gill Plumbing & Heating, we have been providing Hertfordshire with a reliable and affordable service for over 10 years. From dripping taps to full bathroom suite installations, you can rest assured that you will get a professional job at an unbeatable price
@@ -225,7 +225,7 @@ export default function Home() {
               <p className="text-base text-gray-600 mb-4">
                 Services in and around Hitchin, Letchworth & Stevenage
               </p>
-              <p className="text-sm text-gray-500 uppercase tracking-wide">
+              <p className="text-sm text-gray-500 tracking-wide">
                 We undertake a wide range of domestic plumbing services including repairs, installations and servicing
               </p>
             </div>

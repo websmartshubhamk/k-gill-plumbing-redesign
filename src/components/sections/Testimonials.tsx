@@ -138,7 +138,7 @@ export default function Testimonials() {
   }, [nextSlide, prevSlide])
 
   return (
-    <section className="pt-16 md:pt-20 pb-0 bg-gradient-to-br from-gray-50 to-white">
+    <section className="pt-16 md:pt-20 pb-16 md:pb-20 bg-gradient-to-br from-gray-50 to-white" style={{ height: 'auto', minHeight: 'fit-content', overflow: 'visible' }}>
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -154,6 +154,7 @@ export default function Testimonials() {
         <div 
           ref={containerRef}
           className="relative" 
+          style={{ height: 'auto', minHeight: 'fit-content', overflow: 'visible' }}
           onMouseEnter={handleMouseEnter} 
           onMouseLeave={handleMouseLeave}
           onTouchStart={handleTouchStart}
@@ -178,17 +179,18 @@ export default function Testimonials() {
           </button>
 
           {/* Testimonials Carousel */}
-          <div className="overflow-hidden">
+          <div className="overflow-visible mb-4" style={{ height: 'auto', minHeight: 'fit-content' }}>
             <div 
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * (100 / testimonialsPerView)}%)` }}
+              style={{ transform: `translateX(-${currentIndex * (100 / testimonialsPerView)}%)`, height: 'auto', minHeight: 'fit-content' }}
             >
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
                   className="w-full md:w-1/2 flex-shrink-0 px-4"
+                  style={{ height: 'auto', minHeight: 'fit-content' }}
                 >
-                  <div className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 h-full flex flex-col">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 flex flex-col" style={{ height: 'auto', minHeight: 'fit-content' }}>
                     {/* Five Stars at Top */}
                     <div className="flex items-center gap-1 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (

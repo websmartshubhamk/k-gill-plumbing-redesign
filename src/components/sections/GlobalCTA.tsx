@@ -44,7 +44,7 @@ export default function GlobalCTA() {
             {/* Call Now Button */}
             <a
               href="tel:07990806810"
-              className="group flex items-center justify-center gap-3 px-8 py-4 bg-brand-orange text-white rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-brand-orange-dark hover:scale-105 shadow-lg"
+              className="group flex items-center justify-center gap-3 px-8 py-4 bg-brand-orange text-white rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-brand-orange-dark hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <Phone className="h-5 w-5 group-hover:scale-110 transition-transform" />
               Call Now: 07990 806810

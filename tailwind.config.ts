@@ -19,8 +19,9 @@ const config: Config = {
             dark: "#061f3d", // Darker variant
           },
           orange: {
-            light: "#F97316", // Orange-500
-            DEFAULT: "#EA580C", // Orange-600
+            light: "#ffb733", // Lighter variant
+            DEFAULT: "#ffa500", // Main accent orange
+            dark: "#cc8400", // Darker variant for hover
           },
         },
         // Semantic Colors

@@ -78,8 +78,8 @@ export default function Header() {
                   href={item.href}
                   className={`font-medium transition-all duration-200 hover:scale-105 text-sm lg:text-base ${
                     isActive 
-                      ? 'text-brand-blue' 
-                      : 'text-gray-700 hover:text-brand-blue'
+                      ? 'text-brand-orange' 
+                      : 'text-gray-700 hover:text-brand-orange'
                   }`}
                 >
                   {item.name}
@@ -92,7 +92,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a
               href="tel:07990806810"
-              className="flex items-center gap-2 px-4 py-2.5 bg-emergency text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-200 whitespace-nowrap"
+              className="flex items-center gap-2 px-4 py-2.5 bg-brand-orange text-white rounded-full font-semibold text-sm hover:bg-brand-orange-dark hover:shadow-lg transition-all duration-200 whitespace-nowrap"
             >
               <Phone className="h-4 w-4 flex-shrink-0" />
               <span>Emergency: 07990 806810</span>
@@ -134,8 +134,8 @@ export default function Header() {
                   href={item.href}
                   className={`block px-4 py-3 rounded-xl font-medium transition-colors ${
                     isActive
-                      ? 'bg-brand-blue text-white'
-                      : 'text-gray-700 hover:text-brand-blue hover:bg-gray-50'
+                      ? 'bg-brand-orange text-white'
+                      : 'text-gray-700 hover:text-brand-orange hover:bg-orange-50'
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -146,7 +146,7 @@ export default function Header() {
             <div className="pt-4 space-y-3 border-t">
               <a
                 href="tel:07990806810"
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-emergency text-white rounded-full font-semibold hover:shadow-lg transition-all"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-brand-orange text-white rounded-full font-semibold hover:bg-brand-orange-dark hover:shadow-lg transition-all"
               >
                 <Phone className="h-4 w-4" />
                 Emergency: 07990 806810

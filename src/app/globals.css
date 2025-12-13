@@ -7,7 +7,7 @@
     --background: 255 255 255;
     --foreground: 17 24 39;
     --brand-blue: 9 46 90;
-    --brand-orange: 234 88 12;
+    --brand-orange: 255 165 0;
     --emergency: 220 38 38;
   }
 
@@ -32,12 +32,17 @@
   /* Button Variants */
   .btn-primary {
     @apply bg-brand-blue text-white hover:bg-brand-blue-dark focus:ring-4 focus:ring-brand-blue/20 
-           disabled:bg-gray-300 disabled:text-gray-500 transition-colors duration-200;
+           disabled:bg-gray-300 disabled:text-gray-500 transition-all duration-200 hover:shadow-lg;
   }
 
   .btn-secondary {
     @apply bg-white text-brand-blue border-2 border-brand-blue hover:bg-brand-blue hover:text-white 
-           focus:ring-4 focus:ring-brand-blue/20 transition-colors duration-200;
+           focus:ring-4 focus:ring-brand-blue/20 transition-all duration-200;
+  }
+
+  .btn-accent {
+    @apply bg-brand-orange text-white hover:bg-brand-orange-dark focus:ring-4 focus:ring-brand-orange/20 
+           transition-all duration-200 hover:shadow-lg;
   }
 
   .btn-emergency {
@@ -57,7 +62,7 @@
   }
 
   .card-service {
-    @apply card hover:border-brand-blue/20 hover:shadow-brand-blue/10;
+    @apply card hover:border-brand-orange/30 hover:shadow-brand-orange/20 transition-all duration-300;
   }
 
   .card-hover-lift {

@@ -29,14 +29,38 @@ const services = [
 ]
 
 const heatingServices = [
-  'Boilers - Installation & Repairs',
-  'Radiators - Installation & Repairs',
-  'Gas Safety Certificates',
-  'Thermostats',
-  'Hot Water Cylinders',
-  'Electrical Wiring for Heating',
-  'Immersion Heaters',
-  'Underfloor Heating Installations',
+  {
+    title: 'Boilers - Installation & Repairs',
+    description: 'Expert boiler installation and repair services to keep your home warm and efficient.'
+  },
+  {
+    title: 'Radiators - Installation & Repairs',
+    description: 'Professional radiator fitting and maintenance for optimal heat distribution.'
+  },
+  {
+    title: 'Gas Safety Certificates',
+    description: 'Annual safety checks and certification for landlords and homeowners.'
+  },
+  {
+    title: 'Thermostats',
+    description: 'Smart and traditional thermostat installation for precise temperature control.'
+  },
+  {
+    title: 'Hot Water Cylinders',
+    description: 'Installation and maintenance of cylinders for reliable hot water supply.'
+  },
+  {
+    title: 'Electrical Wiring for Heating',
+    description: 'Safe electrical connections for all your heating system components.'
+  },
+  {
+    title: 'Immersion Heaters',
+    description: 'Emergency backup water heating solutions and repairs.'
+  },
+  {
+    title: 'Underfloor Heating Installations',
+    description: 'Modern underfloor heating systems for comfortable, even warmth.'
+  },
 ]
 
 export default function HeatingPage() {
@@ -133,27 +157,10 @@ export default function HeatingPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Comprehensive Heating Solutions
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-gray-600 mb-8">
                 Keep your home warm and comfortable with our full range of heating 
                 services. From installations to repairs, we've got you covered.
               </p>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {heatingServices.map((service) => (
-                  <div key={service} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-brand-blue flex-shrink-0" />
-                    <span className="text-gray-700">{service}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6">
-                <a
-                  href="tel:07990806810"
-                  className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg font-semibold"
-                >
-                  <Phone className="h-4 w-4" />
-                  Call for Immediate Help
-                </a>
-              </div>
             </div>
             <div className="relative">
               <Image
@@ -164,6 +171,27 @@ export default function HeatingPage() {
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
+          </div>
+          
+          {/* Service Blocks */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {heatingServices.map((service) => (
+              <div key={service.title} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <CheckCircle className="h-8 w-8 text-brand-blue mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-sm text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-8 text-center">
+            <a
+              href="tel:07990806810"
+              className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg font-semibold"
+            >
+              <Phone className="h-4 w-4" />
+              Call for Immediate Help
+            </a>
           </div>
         </div>
       </section>

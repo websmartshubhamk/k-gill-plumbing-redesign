@@ -6,7 +6,7 @@ import GlobalCTA from '@/components/sections/GlobalCTA'
 const services = [
   {
     title: 'Emergency Plumbing',
-    description: 'Burst pipes, major leaks, and urgent repairs available 24/7.',
+    description: 'Burst pipes, major leaks, and urgent repairs with rapid response.',
     icon: AlertTriangle,
     urgent: true,
   },
@@ -108,7 +108,7 @@ export default function PlumbingPage() {
                   {service.title}
                   {service.urgent && (
                     <span className="ml-2 text-sm text-emergency font-normal">
-                      24/7 Available
+                      Emergency Service
                     </span>
                   )}
                 </h3>

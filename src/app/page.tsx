@@ -45,7 +45,7 @@ const processSteps = [
   {
     title: '1. Contact Us',
     description: 'Call or message us for immediate response',
-    detail: 'Available 24/7 for emergencies',
+    detail: 'Fast emergency response',
     icon: Phone,
     color: 'bg-brand-blue'
   },

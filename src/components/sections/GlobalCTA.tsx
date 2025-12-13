@@ -36,7 +36,7 @@ export default function GlobalCTA() {
           
           {/* Supporting Line */}
           <p className="text-lg md:text-xl text-gray-200 mb-8">
-            Available 24/7 for all your urgent plumbing and heating needs
+            Fast, reliable service for all your urgent plumbing and heating needs
           </p>
           
           {/* CTAs */}

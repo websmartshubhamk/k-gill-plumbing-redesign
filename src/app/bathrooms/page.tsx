@@ -1,4 +1,4 @@
-import { Phone, Bath, ShowerHead, Droplets, Palette, Ruler, CheckCircle, CheckCircle2, Star, Shield, MessageSquare, Calendar, Wrench } from 'lucide-react'
+import { Phone, Bath, ShowerHead, Droplets, Palette, Ruler, CheckCircle, CheckCircle2, Star, Shield, MessageSquare, Calendar, Wrench, Thermometer, Zap, PaintBucket } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import GlobalCTA from '@/components/sections/GlobalCTA'
@@ -28,15 +28,42 @@ const services = [
 ]
 
 const bathroomServices = [
-  'Shower & power showers',
-  'Bath installation & replacement',
-  'Toilet & basin fitting',
-  'Tiling - walls and floors',
-  'Heated towel rails',
-  'Underfloor heating',
-  'Bathroom radiators',
-  'Complete renovations',
-  'Bathroom design service',
+  {
+    title: 'Shower & power showers',
+    icon: ShowerHead,
+  },
+  {
+    title: 'Bath installation & replacement',
+    icon: Bath,
+  },
+  {
+    title: 'Toilet & basin fitting',
+    icon: Droplets,
+  },
+  {
+    title: 'Tiling - walls and floors',
+    icon: PaintBucket,
+  },
+  {
+    title: 'Heated towel rails',
+    icon: Thermometer,
+  },
+  {
+    title: 'Underfloor heating',
+    icon: Zap,
+  },
+  {
+    title: 'Bathroom radiators',
+    icon: Thermometer,
+  },
+  {
+    title: 'Complete renovations',
+    icon: Wrench,
+  },
+  {
+    title: 'Bathroom design service',
+    icon: Palette,
+  },
 ]
 
 const bathroomProcess = [
@@ -199,44 +226,56 @@ export default function BathroomsPage() {
         </div>
       </section>
 
-      {/* Common Problems */}
-      <section className="py-8 sm:py-10 lg:py-12 xl:py-14 bg-gray-50 relative">
+      {/* Complete Bathroom Solutions */}
+      <section className="py-8 sm:py-10 lg:py-12 xl:py-14 bg-gradient-to-br from-gray-50 to-gray-100 relative">
         <div className="section-container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-start">
+            {/* Content Panel */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Complete Bathroom Solutions
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-gray-600 mb-8 max-w-lg">
                 Create your dream bathroom with our comprehensive installation services. 
                 From initial design to final finishing touches, we handle everything.
               </p>
-              <div className="grid sm:grid-cols-2 gap-3">
+              
+              {/* Two-Column Card Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {bathroomServices.map((service) => (
-                  <div key={service} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-brand-blue flex-shrink-0" />
-                    <span className="text-gray-700">{service}</span>
+                  <div key={service.title} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-200">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-brand-blue rounded-lg p-2 flex-shrink-0">
+                        <service.icon className="h-5 w-5 text-white" />
+                      </div>
+                      <span className="text-gray-800 font-medium">{service.title}</span>
+                    </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-6">
+              
+              <div className="pt-4 border-t border-gray-100">
                 <a
                   href="tel:07990806810"
-                  className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg font-semibold"
+                  className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg font-semibold hover:shadow-lg transition-all duration-200"
                 >
                   <Phone className="h-4 w-4" />
                   Call for Immediate Help
                 </a>
               </div>
             </div>
+            
+            {/* Image Panel */}
             <div className="relative">
-              <Image
-                src="/images/plumbingTap.jpg"
-                alt="Professional Bathroom Services"
-                width={500}
-                height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
+              <div className="bg-white rounded-2xl p-4 shadow-lg">
+                <Image
+                  src="/images/plumbingTap.jpg"
+                  alt="Professional Bathroom Services"
+                  width={600}
+                  height={480}
+                  className="w-full h-auto rounded-xl shadow-md"
+                />
+              </div>
             </div>
           </div>
         </div>

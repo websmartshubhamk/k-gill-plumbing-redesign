@@ -93,7 +93,7 @@ export default function Home() {
         <div className="relative z-10 w-full pt-[80px] sm:pt-[84px] lg:pt-[88px]">
           <div className="section-container">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-brand-orange mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-orange mb-4">
               EXPERTISE YOU CAN TRUST
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8">

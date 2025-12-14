@@ -279,6 +279,7 @@ export default function PlumbingPage() {
                   width={600}
                   height={480}
                   className="w-full h-full object-cover rounded-xl shadow-md flex-1"
+                  style={{ objectPosition: '65% center' }}
                 />
               </div>
             </div>

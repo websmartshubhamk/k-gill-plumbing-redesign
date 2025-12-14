@@ -266,14 +266,15 @@ export default function BathroomsPage() {
             </div>
             
             {/* Image Panel */}
-            <div className="relative flex">
-              <div className="bg-white rounded-2xl p-4 shadow-lg flex-1 flex flex-col">
+            <div className="relative h-auto">
+              <div className="bg-white rounded-2xl p-4 shadow-lg h-full">
                 <Image
                   src="/images/bathroom-tap.jpeg"
                   alt="Professional Bathroom Services"
                   width={600}
                   height={480}
-                  className="w-full h-full object-cover rounded-xl shadow-md flex-1"
+                  className="w-full h-full object-cover rounded-xl shadow-md"
+                  style={{ height: '100%', objectFit: 'cover' }}
                 />
               </div>
             </div>

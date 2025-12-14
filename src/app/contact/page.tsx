@@ -288,8 +288,7 @@ function ContactForm() {
                     <p className="text-gray-600">
                       Monday - Friday: 8:00 AM - 7:00 PM<br />
                       Saturday: 8:00 AM - 12:00 PM<br />
-                      Sunday: Closed<br />
-                      <span className="text-gray-900 font-semibold">Sunday: Closed</span>
+                      Sunday: Closed
                     </p>
                   </div>
                 </div>

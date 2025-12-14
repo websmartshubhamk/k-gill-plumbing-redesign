@@ -235,7 +235,7 @@ export default function Home() {
             {/* Image */}
             <div className="relative">
               <Image
-                src="/images/team-photo-new.jpg"
+                src="/images/team-professional.png"
                 alt="K Gill Plumbing & Heating Professional Team"
                 width={600}
                 height={400}

@@ -179,7 +179,7 @@ export default function Testimonials() {
           </button>
 
           {/* Testimonials Carousel */}
-          <div className="overflow-visible mb-4" style={{ height: 'auto', minHeight: 'fit-content' }}>
+          <div className="overflow-hidden py-4" style={{ height: 'auto', minHeight: 'fit-content' }}>
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * (100 / testimonialsPerView)}%)`, height: 'auto', minHeight: 'fit-content' }}

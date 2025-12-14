@@ -167,7 +167,7 @@ export default function HeatingPage() {
             </div>
             <div className="relative">
               <Image
-                src="/images/Heating1.jpg"
+                src="/images/Heating2.jpg"
                 alt="Professional Heating Services"
                 width={500}
                 height={400}

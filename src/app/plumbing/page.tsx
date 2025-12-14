@@ -274,7 +274,7 @@ export default function PlumbingPage() {
             <div className="relative flex">
               <div className="bg-white rounded-2xl p-4 shadow-lg flex-1 flex flex-col">
                 <Image
-                  src="/images/Home3.jpg"
+                  src="/images/Heating1.jpg"
                   alt="Professional Plumbing Services"
                   width={600}
                   height={480}

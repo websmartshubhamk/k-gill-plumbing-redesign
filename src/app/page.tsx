@@ -76,7 +76,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Team Photo */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -90,14 +90,16 @@ export default function Home() {
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 w-full pt-[80px] sm:pt-[84px] lg:pt-[88px]">
+        <div className="relative z-10 w-full pt-[80px] pb-8 sm:pt-[84px] sm:pb-10 lg:pt-[88px] lg:pb-12">
           <div className="section-container">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-orange mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               EXPERTISE YOU CAN TRUST
             </h1>
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-brand-orange mb-4">
+              HONEST, AFFORDABLE & EXPERIENCED
+            </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8">
-              Honest, Affordable & Experienced<br />
               Clear Solutions for your Plumbing & Heating
             </p>
             <div className="flex items-center gap-4 mt-8">

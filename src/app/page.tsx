@@ -76,22 +76,21 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Team Photo */}
-      <section className="relative flex items-center overflow-hidden" style={{ height: 'auto', minHeight: 'unset', paddingBottom: 0, marginBottom: 0 }}>
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0" style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+        <div className="absolute inset-0 z-0">
           <Image
             src="/images/Home1.jpg"
             alt="K Gill Plumbing & Heating Professional Services"
             fill
             className="object-cover object-center"
             priority
-            style={{ objectFit: 'cover' }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 w-full py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36">
+        <div className="relative z-10 w-full pt-[80px] sm:pt-[84px] lg:pt-[88px]">
           <div className="section-container">
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-orange mb-4">
